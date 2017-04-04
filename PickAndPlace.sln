@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickAndPlaceDatabaseManager", "PickAndPlaceDatabaseManager\PickAndPlaceDatabaseManager.csproj", "{A2204065-ACDB-4466-A8EE-F34B45683DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickAndPlaceLib", "PickAndPlaceLib\PickAndPlaceLib.csproj", "{98597B09-C0D6-4538-B462-0FBF1A2D0648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickAndPlace", "PickAndPlace\PickAndPlace.csproj", "{6D1D3E59-DBEA-4B3C-A27B-0B2516C58FD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2204065-ACDB-4466-A8EE-F34B45683DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2204065-ACDB-4466-A8EE-F34B45683DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2204065-ACDB-4466-A8EE-F34B45683DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2204065-ACDB-4466-A8EE-F34B45683DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98597B09-C0D6-4538-B462-0FBF1A2D0648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98597B09-C0D6-4538-B462-0FBF1A2D0648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98597B09-C0D6-4538-B462-0FBF1A2D0648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98597B09-C0D6-4538-B462-0FBF1A2D0648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1D3E59-DBEA-4B3C-A27B-0B2516C58FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1D3E59-DBEA-4B3C-A27B-0B2516C58FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1D3E59-DBEA-4B3C-A27B-0B2516C58FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1D3E59-DBEA-4B3C-A27B-0B2516C58FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

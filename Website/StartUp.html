@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starting and Settings</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="mainStyle">
+<h1>
+    Loading files in the pick and place program and managing the settings
+</h1>
+
+<div>
+    <h2>
+        Settings
+    </h2>
+    <img src="./images/Settings.png">
+    <h3>
+        File settings
+    </h3>
+    <p>
+        In the settings form you can manage the settings for your machine, your project and the settings for reading the
+        PNP file and BOM file. Lets start on the left with the machine settings. The first table contains the the
+        parameters and the values for reading PNP files. If you use Altium or CircuitMaker then these are correct.
+        The second table contains the settings for reading the BOM file. The first parameter is used to find the column
+        in the BOM that contains the designators, the program links these designators to the designators in the PNP
+        file so be careful when you change it.<br>
+        <strong>manufacturer part number:</strong> This parameter must have the same value as the <strong>name of the
+        parameter</strong> you used in your CAD program as manufacturer part number (e.g. "mpn", "part number",
+        "flupke",...)
+    </p>
+    <h3>
+        Machine settings
+    </h3>
+    <ul>
+        <li>
+            <b>Machine:</b> The machine you are going to use.
+        </li>
+        <li>
+            <b>Speed:</b> Default speed (will be set for all reels later).
+        </li>
+        <li>
+            <b>Nozzle1/ Nozzle2:</b> Equipped nozzles of the machine. Numbers correspond with the numbers on the
+            machine.
+        </li>
+    </ul>
+    <div class="message warning">
+        <p>
+            <strong>WARNING:</strong> You can change these settings at any moment, however if you have already
+            filled
+            stacks, they will reset and your progress will be lost.
+        </p>
+    </div>
+    <h3>
+        Project settings:
+    </h3>
+    <ul>
+        <li>
+            <b>Project folder:</b> Folder where the exported files for the machine are stored.
+        </li>
+        <li>
+            <b>Project name:</b> Name of the exported file. If export all is pressed, the files will be named
+            ProjectName_PhaseNumber (e.g. "Tutorial_Phase_1", "Tutorial_Phase_2",...).
+        </li>
+    </ul>
+
+    <h2>
+        Offset and panelization
+    </h2>
+    <img src="./images/Offset.png">
+    <p>
+        The offset and panelization are settings that can be changed at any stage without consequences.
+        A short explanation of the different settings will be given here. For more details see
+        <a href="tm220a_manual.pdf#page=14">the manual</a>.
+    </p>
+    <ul>
+        <li>
+            <b>Offset Origin:</b> PCB origin compared to the origin of the machine.
+        </li>
+        <li>
+            <b>Number of boards:</b> The number of boards that are placed at once on the machine.
+            X is horizontal, Y is vertical
+        </li>
+        <li>
+            <b>Distance between two boards:</b> This is the distance between two boards when you use panelization.
+            When the boards lay next to each other this distance is 0.
+            You can ignore this setting when there is no panelization.
+        </li>
+        <li>
+            <b>Board dimensions:</b> Width and length of the PCB. These dimensions are used for calculating both the
+            position of the boards if there is panelization and <strong>the location of components on the bottom
+            layer.</strong>
+        </li>
+    </ul>
+
+    <h2>
+        Loading files
+    </h2>
+    <img src="./images/Main_1.png">
+    <p>
+        For loading the files you just need to click on the button Browse and select the either the PNP file or the BOM
+        file. You can also enter the path to the file in the textbox directly. When both paths are defined, you can
+        click on the start button. The program will read the two files, find equivalent components together and make
+        reels from them. Footprints with a known manufacturer part number are loaded from the database, and the
+        corresponding reel is checked whether it can be placed by the machine or not. If the reel can be placed it will
+        show up in the upper list (included). If the reel can't be placed or the footprint is unknown it will be placed
+        in the lower list (excluded).
+    </p>
+</div>
+<div class="pageBottom">
+    <p>
+        <a href="CAD.html">Back</a> <a href="Home.html">Home</a> <a href="Footprint.html">Next</a>
+    </p>
+</div>
+</body>
+</html>

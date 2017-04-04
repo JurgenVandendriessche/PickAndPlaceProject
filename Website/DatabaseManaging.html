@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Footprints database</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="mainStyle">
+<h1>Managing the footprints database</h1>
+<div>
+    <h2>
+        Using PickAndPlaceDatabaseManager.exe
+    </h2>
+    <img src="./images/DatabaseForm.png">
+    <p>
+        When you start this program it automatically loads the database. On the right you have 6 buttons:
+    </p>
+    <ul>
+        <li>
+            <b>Add new:</b> Adds a new footprint to the database, <a href="Footprint.html">more info here.</a>
+        </li>
+        <li>
+            <b>Delete:</b> Removes the selected footprint from the database.
+        </li>
+        <li>
+            <b>Edit:</b> Edit the selected footprint, <a href="Footprint.html">more info here.</a>
+        </li>
+        <li>
+            <b>Import:</b> You can import footprints from an other database. If you click on the button the program will
+            ask you to select the database to import from.All footprints in the other database that have a manufacturer
+            part number that is not in yours will be copied to your database.<br>
+            <strong>note:</strong> This operation can take some time depending on the size of the databases.
+        </li>
+        <li>
+            <b>Filter:</b> Filter the displayed footprints.
+        </li>
+        <li>
+            <b>Clear filter:</b> Clear the current filter.
+        </li>
+    </ul>
+    <p>
+        You can also choose which columns to show and which to hide on by enabling or disabling them on the right.
+    </p>
+
+
+    <h2>
+        Using SQlite
+    </h2>
+    <p>
+        The database is made with <a href="http://sqlitebrowser.org/">DB Browser for SQLite</a> (recommended).
+        There is also an <a href="https://addons.mozilla.org/nl/firefox/addon/sqlite-manager/">add-on version for
+        firefox.</a>
+        The database is located under documents/PickAndPlace and is called pnpFootprints.db.
+        DB Browser for SQLite gives you access to the complete database. Be careful that you don't break it.
+    </p>
+</div>
+<div class="pageBottom">
+    <p>
+        <a href="LoadingStackConfiguration.html">Back</a> <a href="Home.html">Home</a> <a href="NewMachine.html">Next</a>
+    </p>
+</div>
+</body>
+</html>

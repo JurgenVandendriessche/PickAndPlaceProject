@@ -1,0 +1,72 @@
+h1
+{
+    text-align: center;
+}
+
+img
+{
+  display: block;
+  max-width:1200px;
+  max-height:800px;
+  width: auto;
+  height: auto;
+  padding:10px 10px 10px 0px;/*top right bottom left*/
+}
+
+.mainStyle
+{
+    padding:10px 50px 10px 50px;
+}
+
+.pageBottom
+{
+    text-align: center;
+}
+
+.credits
+{
+    text-align: center;
+}
+
+div.diodeTable table
+{
+    border-collapse: collapse;
+}
+div.diodeTable th,td
+{
+    padding:10px 10px 10px 10px;
+    border: 1px solid black;
+    text-align: center;
+
+}
+div.diodeTable img
+{
+    padding:10px 10px 10px 10px;
+    max-width:300px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+}
+
+
+div.message
+{
+    border: #e0e0e0 solid 1px;
+    padding: 11px 50px 20px 95px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: #595959;
+}
+
+div.message.info
+{
+    background: #e6f2ff url("./images/WIKI_info.PNG") no-repeat 25px 25px;
+    border-color:#3a4e78;
+}
+
+div.message.warning
+{
+    background: #ffe1e1 url("./images/WIKI_warning.PNG") no-repeat 25px 25px;
+    border-color:#922020;
+}

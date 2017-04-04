@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding Machines</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="mainStyle">
+<h1>
+    How to add a new machine to the software?
+</h1>
+<div>
+    <h2>
+        The class itself
+    </h2>
+    <p>
+        The software is free for modifications, if you want to add a new machine you can do this. Not all machines can
+        be added to the software (e.g. adding a machine with vision system will be very difficult).<br>
+        There are 3 distinct situations: a machine from the TM family with two nozzles, a machine with two nozzles and a
+        machine with 1 nozzle, or more than two nozzles.
+    </p>
+    <h2>Machine from the TM family with two nozzles:</h2>
+    <p>
+        This is very simple:
+        Make a new class that has te same name as the machine, copy this code and change the values of the parameters
+        (private const ints) with the values for the new machine.<br>
+        <strong>TO DO ADD CODE</strong>
+    </p>
+    <h2>
+        Machine with two nozzles:
+    </h2>
+    <p>
+        This is a lot harder then adding a TM family machine, if the machine has 4 nozzles you have to inherit the
+        IMachine interface and implement it completely. It is possible that you have to make some small changes to the
+        settings form (if you need a COM port for example that you automatically search for the port).<br>
+    </p>
+    <h3>
+        A machine that has one nozzle or more than two nozzles
+    </h3>
+    <p>
+        In this case you will need to do the previous step and something extra: the settings form needs an update.
+        The settings form is the only place in the software that does not change depending on the machine. More
+        specifically the nozzle settings. This are the steps you have to follow:
+    </p>
+    <ol>
+        <li>Make a new user control for managing <strong>one</strong> nozzle setting. Use panels and DockStyle,
+            otherwise it's not going to work on linux.
+        </li>
+        <li>In the code of the settings form class you find these lines of code:<br>
+            <strong>TO DO add code</strong><br>
+            Remove the these two lines of code:<br>
+            <strong>TO DO add the two lines</strong>
+        </li>
+        <li>
+            Make a new function that adds your newly created nozzles to the form and call that function from the two
+            lines you deleted in step 2.
+        </li>
+        <li>
+            After that line, not before you add a this line of code:<br>
+            cbxMachine.SelectedIndexChanged+=cbxMachine_SelectedIndexChanged;<br>
+            <strong>TO DO:Make this look better</strong><br>
+            The event handler needs to do at least two things:<br>
+            - Delete the old Nozzle User Controls.<br>
+            - Call the function to create the new ones.<br>
+            - optional: pass the nozzles from the old to the new (if you go from 3 nozzles to 2 nozzles that the first
+            two nozzles stay the same).
+        </li>
+    </ol>
+    <p>
+        Why isn't it implemented: during development there where only 2 places with problems when I tried the software
+        on linux:<br>
+        1) Connecting to the database.<br>
+        2) GUI elements that where not drawn correctly.<br>
+        I will maybe (if I have time and enthusiasm) implement this part of the software AFTER I defended my bachelor
+        test, this is optional (low priority)<br>
+    </p>
+    <h2>
+        Compiling the project
+    </h2>
+    <p>
+        In order to compile the project you may need to change some settings and move some files around.<br>
+    </p>
+    <ol>
+        <li>
+            Choose witch platform you want (x32 /x64). Make sure that both the library and the main exe project are
+            targeting the same platform.
+        </li>
+        <li>
+            Replace Sqlite3.dll in PickAndPlaceLib.dll by the version for the platform you are targeting. You can find
+            the dll file in the folders of the library project (X86 and x64) or download the most recent precompiled
+            libraries from <a href="https://www.sqlite.org/download.html">Sqlite.</a> (Linux doesn't need sqlite3.dll).
+        </li>
+    </ol>
+    <p>
+        If you only wan't to target windows, you can use the nuget package from sqlite, but you wil need to change some
+        functions in the DatabaseOperations.cs file (function names are the same, but have other capitals).
+    </p>
+</div>
+<div class="pageBottom">
+    <p>
+        <a href="DatabaseManaging.html">Back</a> <a href="Home.html">Home</a> <a href="Home.html">Next</a>
+    </p>
+</div>
+</body>
+</html>
