@@ -24,7 +24,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PickAndPlace")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jurgen n.v.")]
+[assembly: AssemblyCompany("Jurgen")]
 [assembly: AssemblyProduct("PickAndPlace")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
