@@ -63,6 +63,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_32F59DCC8F29D533372E0533E1E650DD"
+        "OwnerKey" = "8:_582551BDD88F4211AFF9A75BE0FD64C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_32F59DCC8F29D533372E0533E1E650DD"
+        "OwnerKey" = "8:_E731C112FAED428CAE8B472E4C5D25F3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3EF190AE15A04D4DADFA15162C790B9F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -225,18 +237,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D0E67A27D5DC96C1A5C93BEC2A10763C"
-        "OwnerKey" = "8:_582551BDD88F4211AFF9A75BE0FD64C3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D0E67A27D5DC96C1A5C93BEC2A10763C"
-        "OwnerKey" = "8:_E731C112FAED428CAE8B472E4C5D25F3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D20084103018481E857A2985E09DBB70"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -268,13 +268,13 @@
         "Entry"
         {
         "MsmKey" = "8:_F14865FB631563419998AAE856A568C0"
-        "OwnerKey" = "8:_E731C112FAED428CAE8B472E4C5D25F3"
+        "OwnerKey" = "8:_32F59DCC8F29D533372E0533E1E650DD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_F14865FB631563419998AAE856A568C0"
-        "OwnerKey" = "8:_D0E67A27D5DC96C1A5C93BEC2A10763C"
+        "OwnerKey" = "8:_E731C112FAED428CAE8B472E4C5D25F3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -322,13 +322,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_582551BDD88F4211AFF9A75BE0FD64C3"
+        "OwnerKey" = "8:_32F59DCC8F29D533372E0533E1E650DD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D0E67A27D5DC96C1A5C93BEC2A10763C"
+        "OwnerKey" = "8:_582551BDD88F4211AFF9A75BE0FD64C3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -590,6 +590,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_32F59DCC8F29D533372E0533E1E650DD"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:PickAndPlaceLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_32F59DCC8F29D533372E0533E1E650DD"
+                    {
+                    "Name" = "8:PickAndPlaceLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:PickAndPlaceLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3EF190AE15A04D4DADFA15162C790B9F"
@@ -1112,37 +1143,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D0E67A27D5DC96C1A5C93BEC2A10763C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:PickAndPlaceLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_D0E67A27D5DC96C1A5C93BEC2A10763C"
-                    {
-                    "Name" = "8:PickAndPlaceLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:PickAndPlaceLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D20084103018481E857A2985E09DBB70"
             {
             "SourcePath" = "8:..\\Website\\DatabaseManaging.html"
@@ -1477,7 +1477,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PickAndPlace"
         "ProductCode" = "8:{AA7BFAF1-DB7D-485A-8838-3E157AE1CDAB}"
-        "PackageCode" = "8:{43800F0D-AEE2-4EEF-92D3-AC69C88E3872}"
+        "PackageCode" = "8:{C9E0EFD4-B1B6-4D0A-BA4B-D0E21073236E}"
         "UpgradeCode" = "8:{C40FC2E9-FDD6-4D28-8FFB-DF6C2B8E23B6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1485,16 +1485,16 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Jurgen Vandendriessche"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:PickAndPlaceSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Jurgen Vandendriessche"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_DE743D8B0D66421E9E0B7D8BAA88F1FB"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
