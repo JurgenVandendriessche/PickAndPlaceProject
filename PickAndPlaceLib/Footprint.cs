@@ -41,23 +41,23 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Initializes a new <see cref="PickAndPlaceLib.Footprint"/>
         /// </summary>
-        /// <param name="manufacturerPartNumber">manufacturer part number of the new footprint</param>
+        /// <param name="manufacturerPartNumber">Manufacturer part number of the new footprint</param>
         public Footprint(string manufacturerPartNumber)
             : this(manufacturerPartNumber, 0, 0, 0, 0, 0, 0, 0, Nozzle.XS, StackType.Reel08mm) { }
 
         /// <summary>
         /// Initializes a new <see cref="PickAndPlaceLib.Footprint"/>
         /// </summary>
-        /// <param name="manufacturerPartNumber">manufacturer part number of the new footprint</param>
-        /// <param name="width">width of the new footprint</param>
-        /// <param name="length">length of the new footprint</param>
-        /// <param name="height">height of the new footprint</param>
-        /// <param name="rotation">rotation of the new footprint</param>
-        /// <param name="offsetStackX">horizontal stack offset of the new footprint</param>
-        /// <param name="offsetStackY">vertical stack offset of the new footprint</param>
-        /// <param name="feedRate">feedrate of the new footprint</param>
-        /// <param name="nozzle">nozzle of the new footprint</param>
-        /// <param name="stackType">stack type of the new footprint</param>
+        /// <param name="manufacturerPartNumber">Manufacturer part number of the new footprint</param>
+        /// <param name="width">Width of the new footprint</param>
+        /// <param name="length">Length of the new footprint</param>
+        /// <param name="height">Height of the new footprint</param>
+        /// <param name="rotation">Rotation of the new footprint</param>
+        /// <param name="offsetStackX">Horizontal stack offset of the new footprint</param>
+        /// <param name="offsetStackY">Vertical stack offset of the new footprint</param>
+        /// <param name="feedRate">Feedrate of the new footprint</param>
+        /// <param name="nozzle">Nozzle of the new footprint</param>
+        /// <param name="stackType">Stack type of the new footprint</param>
         internal Footprint(string manufacturerPartNumber, float width, float length, float height, int rotation,
             float offsetStackX, float offsetStackY, float feedRate, Nozzle nozzle, StackType stackType)
         {
@@ -162,27 +162,6 @@ namespace PickAndPlaceLib
             get { return this.stackType_; }
             set { this.stackType_ = value; }
         }
-
-        #region garbage
-
-        ///// <summary>
-        ///// Initializes a new <see cref="PickAndPlaceLib.Footprint"/>
-        ///// </summary>
-        //private Footprint():this("")
-        //{
-        //    manufacturerPartNumber_ = "";
-        //    width_ = 0;
-        //    length_ = 0;
-        //    height_ = 0;
-        //    rotation_ = 0;
-        //    offsetStackX_ = 0;
-        //    offsetStackY_ = 0;
-        //    feedRate_ = 0;
-        //    nozzle_ = Nozzle.XS;
-        //    stackType_ = StackType.Reel08mm;
-        //}
-
-        #endregion
     }
 
 }

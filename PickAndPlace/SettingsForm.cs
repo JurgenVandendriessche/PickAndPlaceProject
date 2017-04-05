@@ -49,6 +49,7 @@ namespace PickAndPlace
             cbxNozzle2.DataSource = Enum.GetValues(typeof(Nozzle)); //effect: cbxNozzle1.SelectedItem = cbxNozzle2.SelectedItem (pointer) (alternative: clone());
 
             dgPnpFilePara.DefaultCellStyle.SelectionForeColor = dgPnpFilePara.DefaultCellStyle.ForeColor;
+            dgBomFilePara.DefaultCellStyle.SelectionForeColor = dgBomFilePara.DefaultCellStyle.ForeColor;
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace PickAndPlace
         }
 
         /// <summary>
-        /// Set the displayed file parameters (headers of the files)
+        /// Sets the displayed file parameters (headers of the files)
         /// </summary>
         /// <param name="pnpFileParameters">Headers of the pick and place file</param>
         /// <param name="bomFileParameters">Headers of the BOM</param>

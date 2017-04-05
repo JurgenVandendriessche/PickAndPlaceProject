@@ -179,7 +179,7 @@ namespace PickAndPlace
         }
 
         /// <summary>
-        /// Change the reel of one of the <see cref="PickAndPlace.StackControl"/> with the senders old reel
+        /// Changes the reel of one of the <see cref="PickAndPlace.StackControl"/> with the senders old reel
         /// </summary>
         /// <param name="sender">Sender who contains the new rail</param>
         /// <param name="sendersOldReel">Rail to exchange</param>
@@ -325,75 +325,5 @@ namespace PickAndPlace
             }
             return builder.ToString();
         }
-
-        #region garbage
-
-        ///// <summary>
-        ///// Initializes a new <see cref="PickAndPlace.StackList"/>
-        ///// </summary>
-        ///// <param name="machineType">machine type of the new stacklist</param>
-        ///// <param name="phaseNumber">phase number of the new stacklist</param>
-        ///// <param name="stackConfiguration">stack configuration of the new stacklist</param>
-        ///// <exception cref="PickAndPlace.WrongMachineTypeException">Thrown when the machine's number of stacks doesn't match the length of the stackConfiguration</exception>
-        //public StackList(Imachine machineType, int phaseNumber, string[] stackConfiguration)
-        //    : this(machineType, phaseNumber)
-        //{
-        //    if (stackConfiguration.Length != this.stackControls.Length)
-        //        throw new WrongMachineTypeException("Stack configuration and machine type of the current machien don't match \r\nHave you checked your settings?");
-        //    for (int i = 0; i < stackControls.Length; i++)
-        //    {
-        //        stackControls[i].ManufacturerPartNumber = stackConfiguration[i];
-        //    }
-        //}
-
-        /*-------------------------------------------------------------*/
-
-        ///// <summary>
-        ///// Initializes a new <see cref="PickAndPlace.StackList"/>
-        ///// </summary>
-        ///// <param name="machineType">machine type of the new stacklist</param>
-        ///// <param name="phaseNumber">phase number of the new stacklist</param>
-        ///// <param name="stackConfiguration">stack configuration of the new stacklist</param>
-        ///// <param name="reelList">list of all reels that are displayed in the appropriat comboboxen</param>
-        //public StackList(Imachine machineType, int phaseNumber, string[] stackConfiguration, List<Reel> reelList)
-        //    : this(machineType, phaseNumber, stackConfiguration)
-        //{
-        //    this.ptrTotalList = reelList;
-        //    foreach (StackControl curControl in stackControls)
-        //    {
-        //        curControl.SetList(reelList);
-        //    }
-        //}
-
-        /*-------------------------------------------------------------*/
-
-        ///// <summary>
-        ///// Assign the machine type to the stacklist
-        ///// </summary>
-        ///// <param name="machineType">Machine type of the control</param>
-        //public void assignMachine(Imachine machineType)
-        //{
-        //    if (machineType != null)
-        //    {
-        //        StackType[] stackConfig = machineType.stackConfiguration;
-        //        int stackCount = stackConfig.Length;
-        //        stackControls = new stackControl[stackCount];
-        //        for (int i = 0; i < stackCount; i++)
-        //        {
-        //            stackControl newControl = new stackControl(stackConfig[i]);
-        //            newControl.Location = new Point(0, 28 + newControl.Height * i);
-        //            newControl.Name = "stackControl" + (i + 1).ToString();
-        //            newControl.Size = new Size(this.Width - 17, 25); //17 = width scrollbar
-        //            newControl.TabIndex = i + 1;
-        //            newControl.maxSpeed = machineType.maxSpeed;
-        //            newControl.minSpeed = machineType.minSpeed;
-        //            newControl.onReelChanged += onReelListChanged;
-        //            stackControls[i] = newControl;
-        //            this.Controls.Add(newControl);
-        //        }
-        //    }
-        //}
-
-        #endregion
     }
 }

@@ -162,7 +162,6 @@ namespace PickAndPlace
         public bool IsSameMachine(IMachine machine)
         {
             //I have no experiance with overriting the equils method / operators
-            //ASK: virtueel van maken en in child class implementeren?
             if (this.GetType() != machine.GetType()) return false;
             foreach (Nozzle nozzle_ in equippedNozzles_)
             {

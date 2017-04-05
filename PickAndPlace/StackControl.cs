@@ -50,7 +50,7 @@ namespace PickAndPlace
         private string manufacturerPartNumber_;
 
         /// <summary>
-        /// This is for the visual studio IDE, not to be used
+        /// Initializes a new <see cref="PickAndPlace.StackControl"/>
         /// </summary>
         private StackControl()
         {
@@ -282,19 +282,5 @@ namespace PickAndPlace
             return this.Reel.ToString();
         }
 #endif
-
-        #region garbage
-
-        ///// <summary>
-        ///// Set the reel of the current control
-        ///// </summary>
-        ///// <param name="value">Reel to be set</param>
-        //public void setReel(Reel value)
-        //{
-        //    this.setReel(value, false);
-        //}
-
-        #endregion
-
     }
 }

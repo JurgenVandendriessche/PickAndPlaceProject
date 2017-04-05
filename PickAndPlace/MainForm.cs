@@ -38,15 +38,15 @@ namespace PickAndPlace
         /// </summary>
         private List<Reel> reelsToPlace;
         /// <summary>
-        /// list of all reels in lvExcluded
+        /// List of all reels in lvExcluded
         /// </summary>
         private List<Reel> excludedReels;
         /// <summary>
-        /// machine configuration
+        /// Machine configuration
         /// </summary>
         private IMachine pnpMachine;
         /// <summary>
-        /// list of all stacks
+        /// List of all stackLists
         /// </summary>
         private List<StackList> stacklisters;
         //Settings:
@@ -132,7 +132,7 @@ namespace PickAndPlace
         /// <summary>
         /// Open a Browsedialog for csv files
         /// </summary>
-        /// <param name="targetStream">full path to the csv file</param>
+        /// <param name="targetStream">Full path to the csv file</param>
         /// <param name="title">Title of the browse dialog</param>
         private void BrowseDialog(ref string targetStream, string title)
         {
@@ -210,28 +210,27 @@ namespace PickAndPlace
         /// </summary>
         private void UpdateListView()
         {
-            lvIncluded.BeginUpdate();
-            lvExcluded.BeginUpdate();
-            //First listview (included)
-            lvIncluded.Items.Clear();
-            foreach (Reel curReel in reelsToPlace)
+            GenerateListViewItems(lvIncluded, reelsToPlace);
+            GenerateListViewItems(lvExcluded, excludedReels);
+        }
+
+        /// <summary>
+        /// Fills the ListView with the items from the reelList
+        /// </summary>
+        /// <param name="lvUpdated">ListView that needs to be filled</param>
+        /// <param name="reelList">List with reels to display in the ListView</param>
+        private void GenerateListViewItems(ListView lvUpdated, List<Reel> reelList)
+        {
+            lvUpdated.BeginUpdate();
+            lvUpdated.Items.Clear();
+            foreach (Reel curReel in reelList)
             {
-                string[] reelData = curReel.GenerateListViewSubItems();
+                string[] reelData = curReel.GenerateListViewText();
                 ListViewItem newLvItem = new ListViewItem(reelData);
                 newLvItem.ImageIndex = Convert.ToInt32(pnpMachine.ReelCanBeplaced(curReel));
-                lvIncluded.Items.Add(newLvItem);
+                lvUpdated.Items.Add(newLvItem);
             }
-            //Second listview (excluded)
-            lvExcluded.Items.Clear();
-            foreach (Reel curReel in excludedReels)
-            {
-                string[] reelData = curReel.GenerateListViewSubItems();
-                ListViewItem newLvItem = new ListViewItem(reelData);
-                lvExcluded.Items.Add(newLvItem);
-            }
-
-            lvIncluded.EndUpdate();
-            lvExcluded.EndUpdate();
+            lvUpdated.EndUpdate();
         }
 
         /// <summary>
@@ -296,11 +295,11 @@ namespace PickAndPlace
         }
 
         /// <summary>
-        /// move a reel from one list to the other
+        /// Move a reel from one list to the other
         /// </summary>
-        /// <param name="lvOrigin">listview with the selected reel</param>
-        /// <param name="originList">list that currently contains the reel</param>
-        /// <param name="destinationList">target list</param>
+        /// <param name="lvOrigin">Listview with the selected reel</param>
+        /// <param name="originList">List that currently contains the reel</param>
+        /// <param name="destinationList">Target list</param>
         private void MoveReelToOtherListView(ListView lvOrigin, ListView lvDestination, List<Reel> originList, List<Reel> destinationList)
         {
             if (lvOrigin.Items.Count == 0)
@@ -314,6 +313,7 @@ namespace PickAndPlace
             ListViewItem selectedLvItem = lvOrigin.SelectedItems[0];
             int indexInReel = originList.FindIndex(curReel => curReel.GetDisplayString() == selectedLvItem.Text);
             Reel reelToMove = originList[indexInReel];
+
             destinationList.Add(reelToMove);
             originList.Remove(reelToMove);
 
@@ -375,7 +375,6 @@ namespace PickAndPlace
                 }
                 else if (!stacklisters[index].ContainsReels)
                 {
-                    //ASK: remove on release?
                     //Stacklayer == both -> empty stacklist
                     //if, for some reasen (reasen = bug), the layer is both and it contains reels, it should not be removed
                     StackList removedStackList = stacklisters[index]; //need pointer to control for dispose
@@ -439,7 +438,7 @@ namespace PickAndPlace
         /// <summary>
         /// Initializes and configure a new TabPage for the tcPhaseDisplayer
         /// </summary>
-        /// <returns>new TabPage for the tcPhaseDisplayer</returns>
+        /// <returns>New TabPage for the tcPhaseDisplayer</returns>
         private void GenerateTabPage(StackList newControl)
         {
             TabPage newPage = new TabPage();
@@ -456,7 +455,7 @@ namespace PickAndPlace
         /// <summary>
         /// Generates a new phase
         /// </summary>
-        /// <returns>returns the associated stacklist user control</returns>
+        /// <returns>Returns the associated stacklist user control</returns>
         private StackList GenerateNewPhase()
         {
             StackList newControl = new StackList(pnpMachine, stacklisters.Count + 1);
@@ -544,7 +543,7 @@ namespace PickAndPlace
         /// Save specific phase at the given location
         /// </summary>
         /// <param name="path">The complete file path to write to</param>
-        /// <param name="phase">phase to save</param>
+        /// <param name="phase">Phase to save</param>
         private void ExportData(string path, StackList phase)
         {
             float originOffsetX = (float)bscOrigin.ValueX;
@@ -591,7 +590,6 @@ namespace PickAndPlace
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message + Environment.NewLine + "Some files may have been exported", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //ASK: remove the created files?
             }
         }
 
@@ -691,7 +689,7 @@ namespace PickAndPlace
             {
                 using (OpenFileDialog openDialog = new OpenFileDialog())
                 {
-                    openDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //ASK: keep or remove?
+                    openDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     openDialog.Filter = "Project files|*.PrjPnp|CSV files|*.csv|Text Files|*.txt|All Files|*.*";
                     openDialog.Title = "Please select a pick and place project file...";
                     if (openDialog.ShowDialog() == DialogResult.OK)
@@ -752,28 +750,10 @@ namespace PickAndPlace
             {
                 MessageBox.Show("Unable to save your configuration," + Environment.NewLine +
                     "Did you install the software at the right location?" + Environment.NewLine +
-                    "Location should be:" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    "Location should be: " + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace"),
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        #region gabrage
-
-        /*-------------------------------------------------------------*/
-
-        //private void btnEdit_Click(object sender, EventArgs e)
-        //{
-        //    EditReel();
-        //}
-
-        /*-------------------------------------------------------------*/
-
-        //private void lvComponents_ItemActivate(object sender, EventArgs e)
-        //{
-        //    EditReel();
-        //}
-
-        #endregion
     }
 }
 /*Part of the GUI designs were inspired by the PnPconverter C# project of ing. Yannick Verbelen */

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Adding Machines</title>
     <link rel="stylesheet" href="Style.css">
+    <link href="scripts/prettify.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="scripts/prettify.js?"></script>
 </head>
-<body class="mainStyle">
+<body class="mainStyle" onload="prettyPrint()">
 <h1>
     How to add a new machine to the software?
 </h1>
@@ -14,18 +16,40 @@
         The class itself
     </h2>
     <p>
-        The software is free for modifications, if you want to add a new machine you can do this. Not all machines can
-        be added to the software (e.g. adding a machine with vision system will be very difficult).<br>
-        There are 3 distinct situations: a machine from the TM family with two nozzles, a machine with two nozzles and a
+        The software is free for modifications, if you want to add a new machine you can do so. However, not all
+        machines can
+        be added to the software (e.g. adding a machine with vision system will be very difficult/ impossible).<br>
+        There are 3 distinct situations: a machine from the TM family with two nozzles, a machine with two nozzles or a
         machine with 1 nozzle, or more than two nozzles.
     </p>
     <h2>Machine from the TM family with two nozzles:</h2>
     <p>
         This is very simple:
-        Make a new class that has te same name as the machine, copy this code and change the values of the parameters
-        (private const ints) with the values for the new machine.<br>
-        <strong>TO DO ADD CODE</strong>
+        Make a new class that has te same name as the machine (in the code the class has the name TM2X0A), copy this
+        code and fill in the ? with the values for the new machine.<br>
     </p>
+    <pre class="prettyprint linenums">
+namespace PickAndPlace
+{
+    /// summary
+    /// Represents a Neoden TM2X0A pick and place machine
+    /// /summary
+    public class TM2X0A : ATmMachine
+    {
+        private const int width_ = ?;
+        private const int length_ = ?;
+
+        private const int reels8mm_ = ?;
+        private const int reels12mm_ = ?;
+        private const int reels16mm_ = ?;
+
+        /// summary
+        /// Initializes a new PickAndPlace.ATmMachine with the settings of a PickAndPlace.TM2X0A
+        /// /summary
+        public TM2X0A()
+            : base(reels8mm_, reels12mm_, reels16mm_, width_, length_) { }
+    }
+}</pre>
     <h2>
         Machine with two nozzles:
     </h2>
@@ -47,9 +71,24 @@
             otherwise it's not going to work on linux.
         </li>
         <li>In the code of the settings form class you find these lines of code:<br>
-            <strong>TO DO add code</strong><br>
+            <pre class="prettyprint linenums">
+public SettingsForm()
+{
+    InitializeComponent();
+    Type[] machineTypes = { typeof(TM220A), typeof(TM240A) }; //Add new machine types here
+    cbxMachine.Items.AddRange(machineTypes);
+    cbxMachine.DisplayMember = "Name";
+
+    cbxNozzle1.DataSource = Enum.GetValues(typeof(Nozzle));
+    cbxNozzle2.DataSource = Enum.GetValues(typeof(Nozzle));
+
+    dgPnpFilePara.DefaultCellStyle.SelectionForeColor = dgPnpFilePara.DefaultCellStyle.ForeColor;
+    dgBomFilePara.DefaultCellStyle.SelectionForeColor = dgBomFilePara.DefaultCellStyle.ForeColor;
+}</pre>
             Remove the these two lines of code:<br>
-            <strong>TO DO add the two lines</strong>
+            <pre class="prettyprint linenums">
+cbxNozzle1.DataSource = Enum.GetValues(typeof(Nozzle));
+cbxNozzle2.DataSource = Enum.GetValues(typeof(Nozzle));</pre>
         </li>
         <li>
             Make a new function that adds your newly created nozzles to the form and call that function from the two
@@ -57,8 +96,7 @@
         </li>
         <li>
             After that line, not before you add a this line of code:<br>
-            cbxMachine.SelectedIndexChanged+=cbxMachine_SelectedIndexChanged;<br>
-            <strong>TO DO:Make this look better</strong><br>
+            <pre class="prettyprint linenums">cbxMachine.SelectedIndexChanged+=cbxMachine_SelectedIndexChanged;</pre>
             The event handler needs to do at least two things:<br>
             - Delete the old Nozzle User Controls.<br>
             - Call the function to create the new ones.<br>
@@ -82,7 +120,7 @@
     </p>
     <ol>
         <li>
-            Choose witch platform you want (x32 /x64). Make sure that both the library and the main exe project are
+            Choose witch platform you want (x86 /x64). Make sure that both the library and the main exe project are
             targeting the same platform.
         </li>
         <li>

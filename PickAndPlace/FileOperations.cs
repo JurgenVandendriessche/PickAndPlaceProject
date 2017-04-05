@@ -36,7 +36,7 @@ namespace PickAndPlace
         /// Determine the index of the header in the header string
         /// </summary>
         /// <param name="colNames">Column names</param>
-        /// <param name="header">header to determine position off</param>
+        /// <param name="header">Header to determine position off</param>
         /// <returns>Index of the header in the array of colNames</returns>
         /// <exception cref="PickAndPlace.HeaderNotFoundException">Thrown when colNames does not contain header</exception>
         private static int IndexOfHeader(string[] colNames, string header)
@@ -73,7 +73,7 @@ namespace PickAndPlace
         /// Converts the string with a value in mm or mil to the floating point value in mm
         /// </summary>
         /// <param name="value">String to convert</param>
-        /// <returns>value in mm</returns>
+        /// <returns>Value in mm</returns>
         /// <exception cref="PickAndPlace.PnpConversionException">Thrown when the value has an unknown length unit</exception>
         private static float ConvertPnpValue(string value)
         {
@@ -412,10 +412,11 @@ namespace PickAndPlace
                                     index = -1;
                                 }
                             }
+                            //Reusing topReels and bottomReels
                             Reel.SplitReelList(project.ReelsInStackList, out topReels, out bottomReels);
                             project.TopReels = topReels;
                             project.BottomReels = bottomReels;
-                            //topReels and bottomReels are reused now
+                           
                             break;
                         default:
                             throw new FileOperationsException(String.Format("Unable to read file: {0}{2}Problem with reading folowing line:{2}{1}", project.Path, curLine, Environment.NewLine));
@@ -476,7 +477,7 @@ namespace PickAndPlace
     #region exceptions
 
     /// <summary>
-    /// The exception that is thrown when a file operation error occurs
+    /// Exception that is thrown when a file operation error occurs
     /// </summary>
     public class FileOperationsException : ApplicationException
     {
@@ -506,7 +507,7 @@ namespace PickAndPlace
     }
 
     /// <summary>
-    /// The exception that is thrown when a header is not found
+    /// Exception that is thrown when a header is not found
     /// </summary>
     public class HeaderNotFoundException : FileOperationsException
     {

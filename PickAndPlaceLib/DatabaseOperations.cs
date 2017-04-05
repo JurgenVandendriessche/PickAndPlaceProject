@@ -61,8 +61,8 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Gets a specific footprint out of the database
         /// </summary>
-        /// <param name="partNumber">manufacturer part number of the searched part</param>
-        /// <returns>Footprint of the mpm</returns>
+        /// <param name="partNumber">Manufacturer part number of the searched part</param>
+        /// <returns>Footprint of the manufacturere part number</returns>
         public static Footprint GetFootprint(string partNumber)
         {
             return GetFootprint(partNumber, connectionString);
@@ -71,9 +71,9 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Get the footprint from the database specified by the connectionstring
         /// </summary>
-        /// <param name="partNumber">manufacturer part number to be loaded</param>
-        /// <param name="connectionString_">connectionstring for the sqlite database</param>
-        /// <returns>Footprint of the mpm</returns>
+        /// <param name="partNumber">Manufacturer part number to be loaded</param>
+        /// <param name="connectionString_">Connectionstring for the sqlite database</param>
+        /// <returns>Footprint of the manufacturere part number</returns>
         private static Footprint GetFootprint(string partNumber, string connectionString_)
         {
             Footprint result = null;
@@ -114,8 +114,8 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Set all the sql command parameters with the values of the footprint, sqlCommand is passed by reference
         /// </summary>
-        /// <param name="sqlCommand">sqlite command</param>
-        /// <param name="footprint">footprint with parameters</param>
+        /// <param name="sqlCommand">Sqlite command</param>
+        /// <param name="footprint">Footprint with parameters</param>
         private static void SetParametersSqlString(SqliteCommand sqlCommand, Footprint footprint)
         {
             //http://stackoverflow.com/questions/6001016/why-c-sharp-dont-let-to-pass-a-using-variable-to-a-function-as-ref-or-out
@@ -155,7 +155,7 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Removes the the footprint with coresponding manufacturerPartNumber from the database
         /// </summary>
-        /// <param name="manufacturerPartNumber">manufacturer part number to be removed</param>
+        /// <param name="manufacturerPartNumber">Manufacturer part number to be removed</param>
         public static void RemoveFootprint(string manufacturerPartNumber)
         {
             string sqlString = "DELETE FROM footprints WHERE manufacturerPartNumber= @manufacturerPartNumber";
@@ -172,7 +172,7 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Updates all the values of the footprint with the new values, based on the manufacturerPartNumber
         /// </summary>
-        /// <param name="footprint">footprint with new values</param>
+        /// <param name="footprint">Footprint with new values</param>
         public static void UpdateFootprint(Footprint footprint)
         {
             string sqlString = @"UPDATE footprints
@@ -194,8 +194,8 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Check if the manufacturere part number exists in the database
         /// </summary>
-        /// <param name="manufacturerPartNumber">mpn to check</param>
-        /// <returns>true if the mpn exists in the database, else false</returns>
+        /// <param name="manufacturerPartNumber">Manufacturere part number to check</param>
+        /// <returns>True if the manufacturere part number exists in the database, else false</returns>
         public static bool FootprintExists(string manufacturerPartNumber)
         {
             bool result;
@@ -220,7 +220,7 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Gets a list of all the manufacturer part numbers in the database
         /// </summary>
-        /// <returns>list of all the manufacturer part numbers in the database</returns>
+        /// <returns>List of all the manufacturer part numbers in the database</returns>
         public static List<string> GetFootprintList()
         {
             return GetFootprintList(connectionString);
@@ -229,8 +229,8 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Gets a list of all the manufacturer part numbers in the database specified by the connectionstring
         /// </summary>
-        /// <param name="connectionString">connectionstring for the sqlite database</param>
-        /// <returns>list of all the manufacturer part numbers in the database</returns>
+        /// <param name="connectionString">Connectionstring for the sqlite database</param>
+        /// <returns>List of all the manufacturer part numbers in the database</returns>
         private static List<string> GetFootprintList(string connectionString)
         {
             List<string> result = new List<string>();

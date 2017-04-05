@@ -42,7 +42,7 @@ namespace PickAndPlace
         /// <summary>
         /// Gets the maximum height of the components
         /// </summary>
-        int MaxComponentHeight { get; } //unused (ASK: keep for later)
+        int MaxComponentHeight { get; }
 
         /// <summary>
         /// Gets the maximum speed of the machine

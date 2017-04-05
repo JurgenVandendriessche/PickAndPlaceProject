@@ -136,7 +136,7 @@ namespace PickAndPlaceLib
     }
 
     /// <summary>
-    /// The exception that is thrown when the Nozzle is unknown
+    /// Exception that is thrown when the Nozzle is unknown
     /// </summary>
     public class UnknownNozzleException : ApplicationException
     {
@@ -166,7 +166,7 @@ namespace PickAndPlaceLib
     }
 
     /// <summary>
-    /// The exception that is thrown when the StackType is unknown
+    /// Exception that is thrown when the StackType is unknown
     /// </summary>
     public class UnknownStackTypeException : ApplicationException
     {

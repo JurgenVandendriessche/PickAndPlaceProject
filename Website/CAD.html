@@ -33,8 +33,15 @@
     <div class="message info">
         <p>
             <strong>TIP:</strong> You don't need to add a new parameter, you can also use an existing one like the
-            library footprint name.
-            This is not recommended and can lead to problems later on. However it can save time when done properly.
+            library footprint name. This is not recommended and can result in some function no longer working properly
+            later on in the program (e.g. loading an existing stack setup).
+        </p>
+    </div>
+
+    <div class="message warning">
+        <p>
+            <strong>WARNING:</strong> Do not use , or "," in your manufacturer part number, designator or any other
+            parameter you export in the BOM.
         </p>
     </div>
 
@@ -51,9 +58,9 @@
         Exporting the files
     </h2>
     <p>
-        <strong>TO DO: check circuit maker -> output job </strong><br>
         Now you can finally start exporting the files. The easiest way to do this is with a output job. First you need
-        to add a output job file to your project.
+        to add a output job file to your project (output job is only available in Altium, for circuit maker you need to
+        use the generate output function, however the settings stay the same).
     </p>
     <ul>
         <li>
@@ -67,19 +74,16 @@
     <img src="./images/Add_OutputJobFile.png">
     <p>
         Now you need to add both the PNP file and BOM file. First you are going to add the PNP file:<br>
-        <strong>Assembly Outputs >> Add new Assembly Output >> Generates pick and place files >> [PCB DOCUMENT]</strong>
-        If you have multiple PCBs you can also specify which one to export.
-        <br><strong>TO DO: Check if this is true</strong>
+        <strong>Assembly Outputs >> Add new Assembly Output >> Generates pick and place files >> [PCB DOCUMENT]</strong><br>
+        If you have multiple PCBs it altium will generate pick and place files for each one of them. You can also
+        specify which one to export by clicking on the PCB instead of on [PCB DOCUMENT].
     </p>
     <img src="./images/Add_PickAndPlaceFile.png">
     <p>
         Now Altium will create a pick and place file that the program can understand. If something goes wrong and
-        you
-        want to check if the problem is within the PNP file (or you want us to inspect it to find bugs in the
-        program)
-        then you might want to change the settings of the file. You can change the settings by double clicking on
-        the
-        newly added file. The following settings are recommended:
+        you want to check if the problem is within the PNP file (or you want us to inspect it to find bugs in the
+        program) then you might want to change the settings of the file. You can change the settings by double clicking
+        on the newly added file. The following settings are recommended:
     </p>
     <ul>
         <li>
@@ -133,8 +137,7 @@
     <div class="message info">
         <p>
             <strong>TIP:</strong> The output job file saves all the settings so when you need to remake the PNP file
-            or
-            BOM file you just have to do the click on the Generate content button.
+            or BOM file you just have to click on the Generate content button.
         </p>
     </div>
 

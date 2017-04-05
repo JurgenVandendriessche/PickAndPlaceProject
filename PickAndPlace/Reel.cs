@@ -106,7 +106,7 @@ namespace PickAndPlace
         }
 
         /// <summary>
-        /// Set the manufacturer part number of the components in the list
+        /// Sets the manufacturer part number of the components in the list
         /// </summary>
         /// <param name="manufacturerPartNumber">new manufacturer part number</param>
         private void SetManufacturerPartNumber(string manufacturerPartNumber)
@@ -121,7 +121,7 @@ namespace PickAndPlace
         /// Generate a string array to display in a listview
         /// </summary>
         /// <returns>String array with length of 3</returns>
-        public string[] GenerateListViewSubItems()
+        public string[] GenerateListViewText()
         {
             string[] output = new string[3];
             //Get all designators
@@ -137,12 +137,15 @@ namespace PickAndPlace
         /// <returns>All designators in the list</returns>
         public string GetDisplayString()
         {
-            string result = components_[0].Designator;
+            //Alternative:
+            //return String.Join(",",GetDesignators());
+            StringBuilder sbResult = new StringBuilder();
+            sbResult.Append(components_[0].Designator);
             for (int i = 1; i < components_.Count; i++)
             {
-                result += ", " + components_[i].Designator;
+                sbResult.AppendFormat(",{0}", components_[i].Designator);
             }
-            return result;
+            return sbResult.ToString();
         }
 
         /// <summary>
@@ -209,7 +212,7 @@ namespace PickAndPlace
             }
         }
     }
-    
+
     /// <summary>
     /// Layer(s) of the componets on the Reel
     /// </summary>
