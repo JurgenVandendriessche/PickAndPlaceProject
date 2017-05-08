@@ -76,7 +76,7 @@ namespace PickAndPlaceLib
         public static void ShowHelp(object sender, EventArgs e)
         {
             //This is not a real extension method, however, it is used as an event handlers in multiple forms. "It extends the event handlers"
-            String locationManual =  System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace", "Website", "Home.html");
+            string locationManual = System.IO.Path.Combine("Website", "Home.html");
             System.Diagnostics.Process.Start(locationManual);
         }
     }

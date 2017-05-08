@@ -447,7 +447,8 @@ namespace PickAndPlace
         /// <param name="bomFileParameters">Parameters for reading a bom file</param>
         public static void SaveConfigFile(string[] pnpFileParameters, string[] bomFileParameters)
         {
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace", "Config.conf");
+            //string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace", "Config.conf");
+            string path = @"Config.conf";
             using (StreamWriter writer = new StreamWriter(path))
             {
                 writer.WriteLine("PNPFILEPARA=" + String.Join(",", pnpFileParameters));//http://stackoverflow.com/questions/4756565/convert-array-of-integers-to-comma-separated-string
@@ -463,7 +464,7 @@ namespace PickAndPlace
         public static string[][] ReadConfigFile()
         {
             string[][] result = new string[2][];
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace", "Config.conf");
+            string path = @"Config.conf";
             using (StreamReader reader = new StreamReader(path))
             {
                 string[] lines = reader.ReadToEnd().Split(new string[] { "\r\n","\n" }, StringSplitOptions.RemoveEmptyEntries);

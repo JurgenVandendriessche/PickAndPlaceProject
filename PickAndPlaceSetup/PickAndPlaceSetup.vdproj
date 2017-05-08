@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1D8464CF2B184C199855406FE779CB2B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_23E4C09C57EB43339FE68858426F68C5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -70,12 +76,6 @@
         "Entry"
         {
         "MsmKey" = "8:_4E5795BA9CAE4F1D96F95C30F8F88D92"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4F536932844B440D8AAB585CD2ACE89E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -136,12 +136,6 @@
         "Entry"
         {
         "MsmKey" = "8:_87D82604FDC645AAAA8474B9AE3DB732"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_88ACCB651E524964B3A5CECD39743619"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -220,6 +214,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C93FCDB62C134A57B3A1B2F7338F6C0F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CC2F8D64756A41CFB7F62291DE0C6280"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -463,7 +463,7 @@
             "SourcePath" = "8:..\\Readme.txt"
             "TargetName" = "8:Readme.txt"
             "Tag" = "8:"
-            "Folder" = "8:_B9D1833032714D0B99F46C6908E9A8F2"
+            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -503,7 +503,27 @@
             "SourcePath" = "8:..\\Website\\Home.html"
             "TargetName" = "8:Home.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1D8464CF2B184C199855406FE779CB2B"
+            {
+            "SourcePath" = "8:..\\License.txt"
+            "TargetName" = "8:License.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -523,7 +543,7 @@
             "SourcePath" = "8:..\\Website\\FAQ.html"
             "TargetName" = "8:FAQ.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -563,7 +583,7 @@
             "SourcePath" = "8:..\\Website\\LoadingStackConfiguration.html"
             "TargetName" = "8:LoadingStackConfiguration.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -583,7 +603,7 @@
             "SourcePath" = "8:..\\Website\\Footprint.html"
             "TargetName" = "8:Footprint.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -623,27 +643,7 @@
             "SourcePath" = "8:..\\Website\\tm220a_manual.pdf"
             "TargetName" = "8:tm220a_manual.pdf"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4F536932844B440D8AAB585CD2ACE89E"
-            {
-            "SourcePath" = "8:..\\Licence.rtf"
-            "TargetName" = "8:Licence.rtf"
-            "Tag" = "8:"
-            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -663,7 +663,7 @@
             "SourcePath" = "8:..\\Website\\License.html"
             "TargetName" = "8:License.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -783,7 +783,7 @@
             "SourcePath" = "8:..\\Website\\CAD.html"
             "TargetName" = "8:CAD.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -823,27 +823,7 @@
             "SourcePath" = "8:..\\Website\\style.css"
             "TargetName" = "8:style.css"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_88ACCB651E524964B3A5CECD39743619"
-            {
-            "SourcePath" = "8:..\\Licence.txt"
-            "TargetName" = "8:Licence.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_B9D1833032714D0B99F46C6908E9A8F2"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -943,7 +923,7 @@
             "SourcePath" = "8:..\\pnpFootprints.db"
             "TargetName" = "8:pnpFootprints.db"
             "Tag" = "8:"
-            "Folder" = "8:_B9D1833032714D0B99F46C6908E9A8F2"
+            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -963,7 +943,7 @@
             "SourcePath" = "8:..\\Website\\NewMachine.html"
             "TargetName" = "8:NewMachine.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -983,7 +963,7 @@
             "SourcePath" = "8:..\\Website\\SetupAndExporting.html"
             "TargetName" = "8:SetupAndExporting.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1083,7 +1063,7 @@
             "SourcePath" = "8:..\\Website\\Credits.html"
             "TargetName" = "8:Credits.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1104,6 +1084,26 @@
             "TargetName" = "8:Main_3.png"
             "Tag" = "8:"
             "Folder" = "8:_8F9F223FFF5345DCB592964B283F461C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC2F8D64756A41CFB7F62291DE0C6280"
+            {
+            "SourcePath" = "8:..\\License.rtf"
+            "TargetName" = "8:License.rtf"
+            "Tag" = "8:"
+            "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1174,7 +1174,7 @@
             "SourcePath" = "8:..\\Website\\DatabaseManaging.html"
             "TargetName" = "8:DatabaseManaging.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1345,7 +1345,7 @@
             "SourcePath" = "8:..\\Website\\StartUp.html"
             "TargetName" = "8:StartUp.html"
             "Tag" = "8:"
-            "Folder" = "8:_9DB336D333F344CDAB2A2573849C1655"
+            "Folder" = "8:_4DCB6F3125C8485A94B71B9B5F6E378B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1429,6 +1429,39 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_4DCB6F3125C8485A94B71B9B5F6E378B"
+                    {
+                    "Name" = "8:Website"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_A649AFE67DC647CA8F6C1A54E1BCDAAF"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_8F9F223FFF5345DCB592964B283F461C"
+                            {
+                            "Name" = "8:images"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_FD44FC312D8C44F5B4C75EFE0EF0D6AE"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_A107239DB00841CD8902DA91F7F92DC7"
+                            {
+                            "Name" = "8:scripts"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_6DC17EE8A0544C04B1A44946DC9BA6BF"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_7E59AFF227A24C89B3B6C04A1CEA3210"
@@ -1440,50 +1473,6 @@
             "Property" = "8:PersonalFolder"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B9D1833032714D0B99F46C6908E9A8F2"
-                    {
-                    "Name" = "8:PickAndPlace"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_E47A3F38280048F2B90D8639210639CF"
-                        "Folders"
-                        {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_9DB336D333F344CDAB2A2573849C1655"
-                            {
-                            "Name" = "8:Website"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_A649AFE67DC647CA8F6C1A54E1BCDAAF"
-                                "Folders"
-                                {
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8F9F223FFF5345DCB592964B283F461C"
-                                    {
-                                    "Name" = "8:images"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_FD44FC312D8C44F5B4C75EFE0EF0D6AE"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A107239DB00841CD8902DA91F7F92DC7"
-                                    {
-                                    "Name" = "8:scripts"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_6DC17EE8A0544C04B1A44946DC9BA6BF"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -1503,7 +1492,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PickAndPlace"
         "ProductCode" = "8:{AA7BFAF1-DB7D-485A-8838-3E157AE1CDAB}"
-        "PackageCode" = "8:{C9E0EFD4-B1B6-4D0A-BA4B-D0E21073236E}"
+        "PackageCode" = "8:{E9ACFE9F-79E0-4B22-A189-F9267A05A76F}"
         "UpgradeCode" = "8:{C40FC2E9-FDD6-4D28-8FFB-DF6C2B8E23B6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1738,7 +1727,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:_4F536932844B440D8AAB585CD2ACE89E"
+                            "Value" = "8:_CC2F8D64756A41CFB7F62291DE0C6280"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -2090,7 +2079,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:_4F536932844B440D8AAB585CD2ACE89E"
+                            "Value" = "8:_CC2F8D64756A41CFB7F62291DE0C6280"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -2146,7 +2135,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_582551BDD88F4211AFF9A75BE0FD64C3"
             {
-            "SourcePath" = "8:..\\PickAndPlace\\obj\\Debug\\PickAndPlace.exe"
+            "SourcePath" = "8:..\\PickAndPlace\\obj\\Release\\PickAndPlace.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"
@@ -2174,7 +2163,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E731C112FAED428CAE8B472E4C5D25F3"
             {
-            "SourcePath" = "8:..\\PickAndPlaceDatabaseManager\\obj\\Debug\\FootprintManager.exe"
+            "SourcePath" = "8:..\\PickAndPlaceDatabaseManager\\obj\\Release\\FootprintManager.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3EFB7A7642C04827ACA54909DB2FADF6"

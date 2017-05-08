@@ -749,9 +749,7 @@ namespace PickAndPlace
             catch
             {
                 MessageBox.Show("Unable to save your configuration," + Environment.NewLine +
-                    "Did you install the software at the right location?" + Environment.NewLine +
-                    "Location should be: " + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace"),
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "Is the config file used by another program?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

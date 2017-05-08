@@ -29,11 +29,7 @@ namespace PickAndPlaceLib
     /// </summary>
     public static class DatabaseOperations
     {
-        private static string connectionString = "Data Source=" +
-            System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace", "pnpFootprints.db") +
-                                                ";Version=3; FailIfMissing=True; Foreign Keys=True;";
-        //Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace", "pnpFootprints.db")
-        //3 parameters: path seperator is different on windows (\\) and linux (//)
+        private const string connectionString = "Data Source= pnpFootprints.db;Version=3; FailIfMissing=True; Foreign Keys=True;";
 
         /// <summary>
         /// Loads the data of the database into the datatable
