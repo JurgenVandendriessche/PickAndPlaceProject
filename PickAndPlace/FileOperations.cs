@@ -169,7 +169,8 @@ namespace PickAndPlace
                         foreach (string designator in designators)
                         {
                             PnpComponent comp = components.Find(comp_ => comp_.Designator == designator);
-                            if (comp == null) throw new FileOperationsException("folowing designator was not found in the BOM: " + designator);
+                            if (comp == null) throw new FileOperationsException("folowing designator was not found in the pick and place file: " + designator);
+
                             comp.ManufacturerPartNumber = parameters[colMPN];
                             bomComponents.Add(comp);
                             checkCounter++;
@@ -178,7 +179,7 @@ namespace PickAndPlace
                         result.Add(reel);
                     }
                 }
-                if (checkCounter != components.Count) throw new FileOperationsException("The BOM contains more components then the Pick an Place file");
+                if (checkCounter != components.Count) throw new FileOperationsException("The BOM contains more components then the Pick and Place file");
             }
             return result;
         }

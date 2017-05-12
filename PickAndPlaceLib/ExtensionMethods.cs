@@ -44,7 +44,7 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Check if a propertyInfo is numerical or not
         /// </summary>
-        /// <param name="propInfo">Property info to check</param>
+        /// <param name="propInfo">PropertyInfo to check</param>
         /// <returns>True if propInfo is a numeric type else false</returns>
         public static bool IsNumericType(this System.Reflection.PropertyInfo propInfo)
         {

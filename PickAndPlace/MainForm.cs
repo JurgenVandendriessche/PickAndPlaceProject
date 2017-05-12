@@ -639,7 +639,6 @@ namespace PickAndPlace
                 if (!pnpMachine.IsSameMachine(oldPnpMachine))
                 {
                     //refill the lists and if necessary, the stacklisters too
-                    ChangeMachineType();
                     foreach (Reel reel_ in reelsToPlace)
                     {
                         reel_.Speed = pnpMachine.DefaultSpeed;
@@ -648,6 +647,7 @@ namespace PickAndPlace
                     {
                         reel_.Speed = pnpMachine.DefaultSpeed;
                     }
+                    ChangeMachineType();
                     UpdateListView();
                 }
             }
