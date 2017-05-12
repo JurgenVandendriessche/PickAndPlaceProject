@@ -190,7 +190,7 @@ namespace PickAndPlace
                         }
                     }
                     if (pnpMachine.ReelCanBeplaced(similarReels[0])) reelsToPlace.AddRange(similarReels); //reel can be placed -> included list
-                    else excludedReels.AddRange(similarReels); //reel can't be placed -> ecludedList
+                    else excludedReels.AddRange(similarReels); //reel can't be placed -> excludedList
                 }
             }
             catch (Exception exc)

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PickAndPlaceLib.BoardSettingsControl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAwAGCAQAcAAIACQ4AACAAAAAAAAAAAgAAgBAAA=</HashCode>
+      <FileName>BoardSettingsControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.DatabaseOperations" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAMABAAAAAgEAAAAAAAAAAIAAAAAAAAABIAAAAQ=</HashCode>
+      <FileName>DatabaseOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.ExtensionMethods" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.Footprint" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAgAIAgQJCIAEBgAABAAAAAAAAAAAQIABA=</HashCode>
+      <FileName>Footprint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.FootprintForm" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACSABCGIIAEAWACAI2ADAAAIADNAAAADAQYAAAE=</HashCode>
+      <FileName>FootprintForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.PNPconverterTools" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEAAAAAAAAAAAAIEAAAABAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>PNPconverterTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.UnknownNozzleException" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PNPconverterTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickAndPlaceLib.UnknownStackTypeException" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PNPconverterTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PickAndPlaceLib.Nozzle" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAA=</HashCode>
+      <FileName>PNPconverterTools.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PickAndPlaceLib.StackType" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>PNPconverterTools.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
