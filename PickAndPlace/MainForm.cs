@@ -246,7 +246,7 @@ namespace PickAndPlace
             //Find the reel in reelsToPlace
             ListViewItem selectedItem = lvIncluded.SelectedItems[0];
             Reel selectedReel = reelsToPlace.Find(curReel => curReel.GetDisplayString() == selectedItem.Text);
-#if (DEBUG)
+#if DEBUG
             //this only happens when the listview isn't updated when the reelsToPlace list is changed (the reel is in the excludedReels list)
             if (selectedReel == null)
             {

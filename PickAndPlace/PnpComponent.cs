@@ -90,7 +90,7 @@ namespace PickAndPlace
             set { this.manufacturerPartNumber_ = value; }
         }
 
-#if (DEBUG)
+#if DEBUG
         //this is only for the watch
         public override string ToString()
         {
