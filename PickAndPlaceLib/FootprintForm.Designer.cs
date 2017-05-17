@@ -191,9 +191,9 @@ namespace PickAndPlaceLib
             this.lblRotation.AutoSize = true;
             this.lblRotation.Location = new System.Drawing.Point(9, 64);
             this.lblRotation.Name = "lblRotation";
-            this.lblRotation.Size = new System.Drawing.Size(47, 13);
+            this.lblRotation.Size = new System.Drawing.Size(50, 13);
             this.lblRotation.TabIndex = 16;
-            this.lblRotation.Text = "Roation:";
+            this.lblRotation.Text = "Rotation:";
             // 
             // nudHeight
             // 

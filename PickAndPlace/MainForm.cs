@@ -331,18 +331,18 @@ namespace PickAndPlace
         /// <summary>
         /// Checks all reels and fill the stacks automatic with the good reels
         /// </summary>
-        /// <param name="showWarings">True if warnings are shown, else false</param>
-        private void AssignReels(bool showWarings)
+        /// <param name="showWarnings">True if warnings are shown, else false</param>
+        private void AssignReels(bool showWarnings)
         {
             //1) Filter the reels
             List<Reel> acceptedReels = new List<Reel>();
             acceptedReels = reelsToPlace.FindAll(curReel => pnpMachine.ReelCanBeplaced(curReel));
-            if (showWarings)
+            if (showWarnings)
             {
                 //Show warnings to the user
                 if (acceptedReels.Count == 0)
                 {
-                    MessageBox.Show("No reels accepted", "Waring", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No reels accepted", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 int numberRejected = reelsToPlace.Count - acceptedReels.Count;
