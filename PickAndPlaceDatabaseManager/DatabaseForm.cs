@@ -53,7 +53,7 @@ namespace PickAndPlaceDatabaseManager
             ttProgress = new ToolTip();
             footprintTable = new DataTable();
             tableView = new DataView(footprintTable); //Directly binding the DataTable to the DataGridView doesn't work on linux.
-            dgvFootprints.DataSource = tableView;
+            //dgvFootprints.DataSource = tableView; //This did not work either (moved it to load function) 
         }
 
         /// <summary>
@@ -120,6 +120,8 @@ namespace PickAndPlaceDatabaseManager
                 try
                 {
                     DatabaseOperations.GetFootprintDataTable(footprintTable);
+                    dgvFootprints.DataSource = tableView;
+                    //moved to loading function, this seems to help on linux to solve a bug that results in not displaying the table.
                     succes = true;
                 }
                 catch (Exception exc)
