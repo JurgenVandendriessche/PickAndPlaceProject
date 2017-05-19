@@ -9,7 +9,7 @@ sudo apt-get update
 sudo apt-get install pickandplace
 
 Windows installer (windows):
--
+http://pickandplacejurgen.weebly.com/
 
 Zip file (windows + Linux):
--
+http://pickandplacejurgen.weebly.com/
