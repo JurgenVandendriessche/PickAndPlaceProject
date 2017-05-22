@@ -80,8 +80,8 @@
     <Content Include="sqlite3.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="x64\sqlite3.dll" />
-    <Content Include="x86\sqlite3.dll" />
+    <Content Include="Sqlitex64\sqlite3.dll" />
+    <Content Include="Sqlitex86\sqlite3.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
