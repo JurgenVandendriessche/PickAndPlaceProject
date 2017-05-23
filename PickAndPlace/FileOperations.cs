@@ -263,7 +263,7 @@ namespace PickAndPlace
         /// </summary>
         /// <param name="componentList">Components to distribute over the reels</param>
         /// <returns>List of reels with the components</returns>
-        private static List<Reel> ComponentsToReels(List<PnpComponent> componentList)
+        private static List<Reel> ComponentsToReels(List<PnpComponent> componentList, int speed)
         {
             List<Reel> tempReelList = new List<Reel>();
             List<Reel> result = new List<Reel>();
@@ -274,6 +274,7 @@ namespace PickAndPlace
                 //Find all components of the same type (footprint and comment/value are the same)
                 componentList.RemoveAll(comp => matchingComponents.Contains(comp));
                 Reel newReel = new Reel(matchingComponents); //make a reel from the components
+                newReel.Speed = speed;
                 tempReelList.Add(newReel);
             }
             while (tempReelList.Count != 0)
@@ -368,8 +369,8 @@ namespace PickAndPlace
                             string[] remainingLinesSplited = remainingLines.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
                             //1) make reels from the components:
 
-                            project.IncludedReels = ComponentsToReels(includedComponents);
-                            project.ExcludedReels = ComponentsToReels(excludedComponents);
+                            project.IncludedReels = ComponentsToReels(includedComponents, project.Machine.DefaultSpeed);
+                            project.ExcludedReels = ComponentsToReels(excludedComponents, project.Machine.DefaultSpeed);
 
                             List<Reel> completeReelList = new List<Reel>(project.IncludedReels);
                             completeReelList.AddRange(project.ExcludedReels);
@@ -417,7 +418,7 @@ namespace PickAndPlace
                             Reel.SplitReelList(project.ReelsInStackList, out topReels, out bottomReels);
                             project.TopReels = topReels;
                             project.BottomReels = bottomReels;
-                           
+
                             break;
                         default:
                             throw new FileOperationsException(String.Format("Unable to read file: {0}{2}Problem with reading folowing line:{2}{1}", project.Path, curLine, Environment.NewLine));
@@ -427,8 +428,8 @@ namespace PickAndPlace
             if (project.StackListers.Count == 0)
             {
                 //no phases saved
-                project.IncludedReels = ComponentsToReels(includedComponents);
-                project.ExcludedReels = ComponentsToReels(excludedComponents);
+                project.IncludedReels = ComponentsToReels(includedComponents, project.Machine.DefaultSpeed);
+                project.ExcludedReels = ComponentsToReels(excludedComponents, project.Machine.DefaultSpeed);
             }
             if ((project.BoardSettings.HorizontalOriginOffset == -1f) || (project.BoardSettings.VerticalOriginOffset == -1f) ||
                 (project.BoardSettings.BoardsX == -1) || (project.BoardSettings.BoardsY == -1) ||
@@ -468,7 +469,7 @@ namespace PickAndPlace
             string path = @"Config.conf";
             using (StreamReader reader = new StreamReader(path))
             {
-                string[] lines = reader.ReadToEnd().Split(new string[] { "\r\n","\n" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] lines = reader.ReadToEnd().Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
                 result[0] = lines[0].Split(new char[] { '=', ',' }).Skip(1).ToArray();
                 result[1] = lines[1].Split(new char[] { '=', ',' }).Skip(1).ToArray();
             }
