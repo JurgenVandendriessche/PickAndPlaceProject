@@ -87,7 +87,7 @@ namespace PickAndPlace
             //pnpMachine = new TM220A();
             ChangeMachineType(new TM220A());
             projectName = "newPNPproject";
-            folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PickAndPlace");
+            folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
             //
             //lvComponents
