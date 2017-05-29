@@ -88,8 +88,7 @@ namespace PickAndPlace
                 //Angle is an element of [-360;-180] or [180;359]
                 result = -Math.Sign(result) * (360 - Math.Abs(result));
             }
-            //CAD programs are (mostly) counter clockwise, machine is clockwise
-            return -result;
+            return result;
         }
 
         public int Width

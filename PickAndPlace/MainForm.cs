@@ -272,12 +272,17 @@ namespace PickAndPlace
                 {
                     reel.Footprint = footprint;
                 }
-                if ((stacklisters.Count != 0) &&
-                    (couldBePlaced != pnpMachine.ReelCanBeplaced(selectedReel) || (footprint.StackType != oldStackType)))
+                //BUG: a splitted reel is not in the list
+                //if ((stacklisters.Count != 0) &&
+                //    (couldBePlaced != pnpMachine.ReelCanBeplaced(selectedReel) || (footprint.StackType != oldStackType)))
+                //{
+                //    //IF the stacks are fild AND
+                //    //the ReelCanBePlaced state is changed OR the StackType has changed
+                //    //then should the stacks be updated
+                //    AssignReels(false);
+                //}
+                if(stacklisters.Count != 0)
                 {
-                    //IF the stacks are fild AND
-                    //the ReelCanBePlaced state is changed OR the StackType has changed
-                    //then should the stacks be updated
                     AssignReels(false);
                 }
                 UpdateListView();
