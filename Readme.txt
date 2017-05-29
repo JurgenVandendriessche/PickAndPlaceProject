@@ -1,7 +1,7 @@
 BA test of Jurgen Vandendriessche
 
 Program for creating CSV files for the Neoden TM220A or TM240A pick and place machines.
-The program works on Windows and is ported to Linux (small problems with the deb package, will be fixed in the future).
+The program works on Windows and was ported to Linux (at the moment linux is no longer supported, the package contains bugs).
 
 Deb package (Linux):
 sudo add-apt-repository ppa:jvandendriessche/pickandplacejurgen
