@@ -229,7 +229,7 @@ namespace PickAndPlace
                             compRotation = ATmMachine.ConvertAngle(180 - (comp.Location.Rotation + reelsFootprint.Rotation));
                         }
                         //%,Head,Stack,X,Y,R,H,skip,Ref,Comment,
-                        sbComponentLocations.AppendFormat("{0},{1},{2},{3:0.##},{4:0.##},{5},{6:0.##},0,{7},{8}{9}",
+                        sbComponentLocations.AppendFormat("{0},{1},{2},{3:0.###},{4:0.###},{5},{6:0.##},0,{7},{8}{9}",
                                                new object[] { operationNumber, nozzleNumber, index,comp.Location.X,distance,
                                                                   compRotation,reelsFootprint.Height,
                                                                   comp.Designator,reelsFootprint.ManufacturerPartNumber,Environment.NewLine});

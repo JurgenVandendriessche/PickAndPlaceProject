@@ -88,7 +88,7 @@ namespace PickAndPlace
                 value_ = value.Remove(value.Length - 3);//.Replace('.', ',');
             }
             else throw new PnpConversionException(String.Format("Unable to convert the following value: {0}{1}Only mm and mil are suported units", value, Environment.NewLine));
-            result = (float)Math.Round(Convert.ToDouble(value_), 2);
+            result = (float)Math.Round(Convert.ToDouble(value_), 3);
             return result;
         }
 
