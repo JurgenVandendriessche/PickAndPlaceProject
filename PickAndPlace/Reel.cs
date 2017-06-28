@@ -37,7 +37,7 @@ namespace PickAndPlace
         /// </summary>
         /// <param name="components">Components on the reel</param>
         /// <param name="speed">Speed of the reel</param>
-        public Reel(List<PnpComponent> components, int speed = 100)
+        public Reel(List<PnpComponent> components, int speed)
         {
             components_ = components;
             speed_ = speed;

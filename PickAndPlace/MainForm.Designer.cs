@@ -219,12 +219,12 @@ namespace PickAndPlace
             131072});
             this.bscDimensions.Location = new System.Drawing.Point(3, 181);
             this.bscDimensions.MaximumX = new decimal(new int[] {
-            10000,
+            1000,
             0,
             0,
             0});
             this.bscDimensions.MaximumY = new decimal(new int[] {
-            10000,
+            1000,
             0,
             0,
             0});
@@ -309,16 +309,16 @@ namespace PickAndPlace
             0,
             131072});
             this.bscOrigin.Location = new System.Drawing.Point(3, 16);
-            this.bscOrigin.MaximumX = new decimal(new int[] {
-            1000,
+            this.bscOrigin.MinimumX = new decimal(new int[] {
+            100,
             0,
             0,
-            0});
-            this.bscOrigin.MaximumY = new decimal(new int[] {
-            1000,
+            -2147483648});
+            this.bscOrigin.MinimumY = new decimal(new int[] {
+            100,
             0,
             0,
-            0});
+            -2147483648});
             this.bscOrigin.Name = "bscOrigin";
             this.bscOrigin.Size = new System.Drawing.Size(211, 55);
             this.bscOrigin.TabIndex = 9;

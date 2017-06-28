@@ -102,11 +102,12 @@ namespace PickAndPlace
         /// <param name="pnpHeaders">Headers used to read the pnp file</param>
         /// <param name="bomFilePath">Path to the BOM file</param>
         /// <param name="bomHeaders">Headers used to read the BOM</param>
+        /// <param name="defaultSpeed">Default speed of the reels</param>
         /// <returns>List of reels that was created based on the data in the files</returns>
         /// <exception cref="PickAndPlace.FileOperationsException">Thrown when some data cannot be processed </exception>
         /// <exception cref="PickAndPlace.HeaderNotFoundException">Thrown when one of the header parameters is not found</exception>
         /// <exception cref="PickAndPlace.PnpConversionException">Thrown when the pnp file uses an unknown length unit</exception>
-        public static List<Reel> ReadPickAndPlaceFiles(string pnpFilePath, string[] pnpHeaders, string bomFilePath, string[] bomHeaders)
+        public static List<Reel> ReadPickAndPlaceFiles(string pnpFilePath, string[] pnpHeaders, string bomFilePath, string[] bomHeaders, int defaultSpeed)
         {
             List<Reel> result = new List<Reel>();
             List<PnpComponent> components = new List<PnpComponent>();
@@ -178,7 +179,7 @@ namespace PickAndPlace
                             bomComponents.Add(comp);
                             checkCounter++;
                         }
-                        Reel reel = new Reel(bomComponents);
+                        Reel reel = new Reel(bomComponents, defaultSpeed);
                         result.Add(reel);
                     }
                 }
@@ -227,9 +228,11 @@ namespace PickAndPlace
                 //part 2: machine information
                 writer.WriteLine("#Machine information:");
                 string equippedNozzles = "";
-                for (int i = 0; i < project.Machine.EquippedNozzles.Length; i++)
+                int numberOfNozzles = project.Machine.EquippedNozzles.Length;
+                for (int i = 0; i < numberOfNozzles; i++)
                 {
-                    equippedNozzles += project.Machine.EquippedNozzles[i].ToString() + ",";
+                    equippedNozzles += project.Machine.EquippedNozzles[i].ToString();
+                    if (i != numberOfNozzles - 1) equippedNozzles += ",";
                 }
                 writer.WriteLine("MachineType={0},speed={1},equipped nozzles={2}{3}",
                           new object[] { project.Machine.GetType(), project.Machine.DefaultSpeed, equippedNozzles, Environment.NewLine });
@@ -276,8 +279,7 @@ namespace PickAndPlace
                 List<PnpComponent> matchingComponents = componentList.FindAll(comp_ => (comp_.Comment == curComponent.Comment) && (comp_.ManufacturerPartNumber == curComponent.ManufacturerPartNumber));
                 //Find all components of the same type (footprint and comment/value are the same)
                 componentList.RemoveAll(comp => matchingComponents.Contains(comp));
-                Reel newReel = new Reel(matchingComponents); //make a reel from the components
-                newReel.Speed = speed;
+                Reel newReel = new Reel(matchingComponents, speed); //make a reel from the components
                 tempReelList.Add(newReel);
             }
             while (tempReelList.Count != 0)
@@ -315,7 +317,7 @@ namespace PickAndPlace
                     string curLine = reader.ReadLine();
                     //# is a line with comment
                     if (curLine.StartsWith("#") || String.IsNullOrWhiteSpace(curLine)) continue;
-                    string[] splitedLine = curLine.Split(new char[] { ',', '=' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] splitedLine = curLine.Split(new char[] { ',', '=' }, StringSplitOptions.None);
                     switch (splitedLine[0])
                     {
                         case "ProjectName":

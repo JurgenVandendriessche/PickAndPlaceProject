@@ -174,7 +174,7 @@ namespace PickAndPlace
                 reelsToPlace.Clear();
                 excludedReels.Clear();
                 ClearPhases();
-                List<Reel> tempReelList = FileOperations.ReadPickAndPlaceFiles(tbxPnPfile.Text, pnpFileParameters, tbxBOMfile.Text, bomFileParameters);
+                List<Reel> tempReelList = FileOperations.ReadPickAndPlaceFiles(tbxPnPfile.Text, pnpFileParameters, tbxBOMfile.Text, bomFileParameters, pnpMachine.DefaultSpeed);
                 while (tempReelList.Count != 0)
                 {
                     Footprint reelFootprint = tempReelList[0].Footprint;
@@ -281,7 +281,7 @@ namespace PickAndPlace
                 //    //then should the stacks be updated
                 //    AssignReels(false);
                 //}
-                if(stacklisters.Count != 0)
+                if (stacklisters.Count != 0)
                 {
                     AssignReels(false);
                 }
@@ -608,7 +608,10 @@ namespace PickAndPlace
             bscDistBetwBoards.MaximumX = pnpMachine.Width;
             bscDistBetwBoards.MaximumY = pnpMachine.Length;
             bscOrigin.MaximumX = pnpMachine.Width;
+            bscOrigin.MinimumX = -pnpMachine.Width;
             bscOrigin.MaximumY = pnpMachine.Length;
+            bscOrigin.MinimumY = -pnpMachine.Length;
+
             UpdateListView(); //update icons: perhaps some components cannot be placed anymore
             if (stacklisters.Count != 0) AssignReels(false);
             //Stacks need to be refild, user should not get the warning "Do you want to continue?"
