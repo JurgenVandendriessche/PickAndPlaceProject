@@ -74,11 +74,12 @@ namespace PickAndPlace
         }
 
         /// <summary>
-        /// Gets the comment of the component
+        /// Gets or sets the comment of the component
         /// </summary>
         public string Comment
         {
             get { return comment_; }
+            set { this.comment_ = value; }
         }
 
         /// <summary>

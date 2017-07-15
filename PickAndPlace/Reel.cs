@@ -46,6 +46,28 @@ namespace PickAndPlace
         }
 
         /// <summary>
+        /// Merges the reels and creates a new reel with a given speed and footprint
+        /// </summary>
+        /// <param name="reels">Reels to merge</param>
+        /// <param name="mainReel">Reel with the settings to keep</param>
+        public Reel(List<Reel> reels, Reel mainReel)
+        {
+            speed_ = mainReel.speed_;
+            footprint_ = mainReel.footprint_;
+            components_ = new List<PnpComponent>();
+            foreach (Reel reel in reels)
+            {
+                foreach (PnpComponent component_ in reel.components_)
+                {
+                    component_.Comment = mainReel.components_[0].Comment;
+                    component_.ManufacturerPartNumber = mainReel.components_[0].ManufacturerPartNumber;
+                }
+                components_.AddRange(reel.Components);
+            }
+            components_.Sort((x, y) => string.Compare(x.Designator, y.Designator));
+        }
+
+        /// <summary>
         /// Gets the components in the reel
         /// </summary>
         public List<PnpComponent> Components

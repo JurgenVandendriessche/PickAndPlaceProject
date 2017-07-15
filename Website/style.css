@@ -1,4 +1,9 @@
-h1
+.mainStyle
+{
+    padding:10px 50px 10px 50px;
+}
+
+.pageBottom, .credits, h1
 {
     text-align: center;
 }
@@ -13,19 +18,18 @@ img
   padding:10px 10px 10px 0px;/*top right bottom left*/
 }
 
-.mainStyle
+.img-container img
 {
-    padding:10px 50px 10px 50px;
+    display:inline-block;
+    max-width:400px;
+    max-height:300px;
 }
 
-.pageBottom
-{
-    text-align: center;
-}
+/*Diode Table*/
 
-.credits
+div.diodeTable
 {
-    text-align: center;
+    padding:0px 0px 25px 0px;/*top right bottom left*/
 }
 
 div.diodeTable table
@@ -37,17 +41,17 @@ div.diodeTable th,td
     padding:10px 10px 10px 10px;
     border: 1px solid black;
     text-align: center;
-
 }
+
 div.diodeTable img
 {
     padding:10px 10px 10px 10px;
     max-width:300px;
     max-height:300px;
-    width: auto;
-    height: auto;
 }
 
+
+/*messages*/
 
 div.message
 {
@@ -69,4 +73,14 @@ div.message.warning
 {
     background: #ffe1e1 url("./images/WIKI_warning.PNG") no-repeat 25px 25px;
     border-color:#922020;
+}
+
+/*Patch notes*/
+div.changeLog padding
+{
+
+}
+div.changeLog li
+{
+    margin: 8px 0;
 }

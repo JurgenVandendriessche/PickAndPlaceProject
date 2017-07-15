@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tips and tricks</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="mainStyle">
+<h1>Tips and tricks</h1>
+<div>
+    <h2>
+        Finding the origin
+    </h2>
+    <p>
+        To make sure you have entered the correct origin you can do the following:
+    </p>
+    <ol>
+        <li>
+            Make a new output file containing only your fiducials.
+        </li>
+        <li>
+            Open the file in editor mode on the machine and select one of your fiducials.
+        </li>
+        <li>
+            Press on the yellow enter button.
+        </li>
+        <li>
+            Press on the joystick icon on the screen (locate button).
+        </li>
+        <li>
+            The laser will now indicate where the machine thinks the fiducial is located. With the four white buttons on
+            the left you can correct the laser. <strong>Do not press the enter button!</strong><br>
+            Move the head of the machine until the laser points to your fiducial.
+        </li>
+        <li>
+            When the lasers location is on the fiducial you have a set of new virtual coordinates, the difference
+            between the new coordinates and the real coordinates is your origin compensation. This can be negative.<br>
+            Xnew - Xold = Xorigin.<br>
+            Ynew - Yold = Yorigin.
+        </li>
+        <li>
+            Press the escape button.
+        </li>
+        <li>
+            Edit the origin line and enter the values you have calculated.
+        </li>
+        <li>
+            Now repeat step 2-4, normally the laser should point to the fiducial now.
+        </li>
+    </ol>
+    <div class='img-container'>
+        <img src="./images/MachineScreen.png">
+        <img src="./images/MachineButtons.png">
+        <img src="./images/MachineLaser.png">
+    </div>
+    <h2>
+        Top and bottom with same stack configuration
+    </h2>
+    <p>
+        If you have a top and a bottom phase with the same stack configuration, you may want to do the following:<br>
+        Setup all reels for the first phase, export the phase, select the second phase and load the stack configuration
+        of the first phase.<br>
+    </p>
+</div>
+<div class="pageBottom">
+    <p>
+        <a href="Home.html">Home</a>
+    </p>
+</div>
+</body>
+</html>

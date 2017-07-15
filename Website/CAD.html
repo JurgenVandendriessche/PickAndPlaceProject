@@ -15,15 +15,24 @@
     </h2>
     <p>
         The pick and place program needs 2 files in order to work: one pick and place file (PNP file) and one bill of
-        material (BOM file). In this tutorial/manual an Altium designer project will be used to demonstrate the
+        material (BOM file). In this tutorial/manual an Altium Designer project will be used to demonstrate the
         principles.
     </p>
+    <div class="message info">
+        <p>
+            <strong>NOTE:</strong> In this tutorial Altium Designer version 16.0.6 (build 282) is used.<br>
+            Other versions of Altium Designer may look different. However the rules for the output files stay more or
+            less the same.<br>
+            When using Altium Designer 17 (or later), it is recommended that you check out the
+            <a href="InputFileRules.html">input file rules</a> page.
+        </p>
+    </div>
     <h2>
         Manufacturer part number
     </h2>
     <p>
         The first step when exporting files is assigning manufacturer part numbers to the components.
-        In Altium designer this is done by adding a parameter to the schematic component.
+        In Altium Designer this is done by adding a parameter to the schematic component.
         It is important that all schematic components have the same parameter name (case sensitive), in this
         "Manufacturer Part Number" is used as parameter name. You can also use something else e.g. "mpn", "part number",
         "flupke",...
@@ -75,7 +84,7 @@
     <p>
         Now you need to add both the PNP file and BOM file. First you are going to add the PNP file:<br>
         <strong>Assembly Outputs >> Add new Assembly Output >> Generates pick and place files >> [PCB DOCUMENT]</strong><br>
-        If you have multiple PCBs it altium will generate pick and place files for each one of them. You can also
+        If you have multiple PCBs it will generate pick and place files for each one of them. You can also
         specify which one to export by clicking on the PCB instead of on [PCB DOCUMENT].
     </p>
     <img src="./images/Add_PickAndPlaceFile.png">
@@ -98,8 +107,7 @@
         Now you need to add the BOM file:<br>
         <strong>Report Outputs >> Bill of Materials >> [Project]</strong><br>
         It is important that you select [Project], otherwise you won't have all components in the file (you selected
-        a
-        schematic file) or you can't add the manufacturer part numbers to the components (you selected a PcbDoc).
+        a schematic file) or you can't add the manufacturer part numbers to the components (you selected a PcbDoc).
     </p>
     <img src="./images/Add_BomFile.png">
     <p>
@@ -140,8 +148,8 @@
             or BOM file you just have to click on the Generate content button.
         </p>
     </div>
-
 </div>
+
 <div class="pageBottom">
     <p>
         <a href="Home.html">Back</a> <a href="Home.html">Home</a> <a href="StartUp.html">Next</a>

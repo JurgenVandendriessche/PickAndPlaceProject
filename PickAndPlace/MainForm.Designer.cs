@@ -79,8 +79,10 @@ namespace PickAndPlace
             this.btnLoad = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlCenter = new System.Windows.Forms.Panel();
+            this.btnMerge = new System.Windows.Forms.Button();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlExportButtons = new System.Windows.Forms.Panel();
+            this.llblVersion = new System.Windows.Forms.LinkLabel();
             this.gbOffsetAndPanelization.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlCenter.SuspendLayout();
@@ -166,10 +168,10 @@ namespace PickAndPlace
             this.chManufacturerPartNumberU,
             this.chCommentU});
             this.lvIncluded.FullRowSelect = true;
+            this.lvIncluded.HideSelection = false;
             this.lvIncluded.Location = new System.Drawing.Point(5, 12);
-            this.lvIncluded.MultiSelect = false;
             this.lvIncluded.Name = "lvIncluded";
-            this.lvIncluded.Size = new System.Drawing.Size(335, 195);
+            this.lvIncluded.Size = new System.Drawing.Size(419, 295);
             this.lvIncluded.TabIndex = 13;
             this.lvIncluded.UseCompatibleStateImageBehavior = false;
             this.lvIncluded.View = System.Windows.Forms.View.Details;
@@ -178,17 +180,17 @@ namespace PickAndPlace
             // chDesignatorsU
             // 
             this.chDesignatorsU.Text = "Designators";
-            this.chDesignatorsU.Width = 111;
+            this.chDesignatorsU.Width = 139;
             // 
             // chManufacturerPartNumberU
             // 
             this.chManufacturerPartNumberU.Text = "Manufacturer part number";
-            this.chManufacturerPartNumberU.Width = 110;
+            this.chManufacturerPartNumberU.Width = 138;
             // 
             // chCommentU
             // 
             this.chCommentU.Text = "Comment";
-            this.chCommentU.Width = 110;
+            this.chCommentU.Width = 138;
             // 
             // gbOffsetAndPanelization
             // 
@@ -327,7 +329,7 @@ namespace PickAndPlace
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(5, 218);
+            this.btnEdit.Location = new System.Drawing.Point(5, 318);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 15;
@@ -337,7 +339,7 @@ namespace PickAndPlace
             // 
             // btnExclude
             // 
-            this.btnExclude.Location = new System.Drawing.Point(92, 218);
+            this.btnExclude.Location = new System.Drawing.Point(91, 318);
             this.btnExclude.Name = "btnExclude";
             this.btnExclude.Size = new System.Drawing.Size(75, 23);
             this.btnExclude.TabIndex = 16;
@@ -352,10 +354,11 @@ namespace PickAndPlace
             this.chManufacturerPartNumberL,
             this.chCommentL});
             this.lvExcluded.FullRowSelect = true;
-            this.lvExcluded.Location = new System.Drawing.Point(5, 261);
+            this.lvExcluded.HideSelection = false;
+            this.lvExcluded.Location = new System.Drawing.Point(5, 360);
             this.lvExcluded.MultiSelect = false;
             this.lvExcluded.Name = "lvExcluded";
-            this.lvExcluded.Size = new System.Drawing.Size(335, 195);
+            this.lvExcluded.Size = new System.Drawing.Size(419, 295);
             this.lvExcluded.TabIndex = 14;
             this.lvExcluded.UseCompatibleStateImageBehavior = false;
             this.lvExcluded.View = System.Windows.Forms.View.Details;
@@ -363,21 +366,21 @@ namespace PickAndPlace
             // chDesignatorsL
             // 
             this.chDesignatorsL.Text = "Designators";
-            this.chDesignatorsL.Width = 111;
+            this.chDesignatorsL.Width = 139;
             // 
             // chManufacturerPartNumberL
             // 
             this.chManufacturerPartNumberL.Text = "Manufacturer part number";
-            this.chManufacturerPartNumberL.Width = 110;
+            this.chManufacturerPartNumberL.Width = 138;
             // 
             // chCommentL
             // 
             this.chCommentL.Text = "Comment";
-            this.chCommentL.Width = 110;
+            this.chCommentL.Width = 138;
             // 
             // btnInclude
             // 
-            this.btnInclude.Location = new System.Drawing.Point(178, 218);
+            this.btnInclude.Location = new System.Drawing.Point(177, 318);
             this.btnInclude.Name = "btnInclude";
             this.btnInclude.Size = new System.Drawing.Size(75, 23);
             this.btnInclude.TabIndex = 17;
@@ -391,12 +394,12 @@ namespace PickAndPlace
             this.tcPhaseDisplayer.Location = new System.Drawing.Point(10, 10);
             this.tcPhaseDisplayer.Name = "tcPhaseDisplayer";
             this.tcPhaseDisplayer.SelectedIndex = 0;
-            this.tcPhaseDisplayer.Size = new System.Drawing.Size(623, 574);
-            this.tcPhaseDisplayer.TabIndex = 19;
+            this.tcPhaseDisplayer.Size = new System.Drawing.Size(554, 574);
+            this.tcPhaseDisplayer.TabIndex = 20;
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(265, 218);
+            this.btnGenerate.Location = new System.Drawing.Point(263, 318);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 18;
@@ -409,7 +412,7 @@ namespace PickAndPlace
             this.btnExport.Location = new System.Drawing.Point(19, 12);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 20;
+            this.btnExport.TabIndex = 21;
             this.btnExport.Text = "&Export";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -429,7 +432,7 @@ namespace PickAndPlace
             this.btnExportAll.Location = new System.Drawing.Point(100, 12);
             this.btnExportAll.Name = "btnExportAll";
             this.btnExportAll.Size = new System.Drawing.Size(75, 23);
-            this.btnExportAll.TabIndex = 21;
+            this.btnExportAll.TabIndex = 22;
             this.btnExportAll.Text = "E&xport all";
             this.btnExportAll.UseVisualStyleBackColor = true;
             this.btnExportAll.Click += new System.EventHandler(this.btnExportAll_Click);
@@ -439,7 +442,7 @@ namespace PickAndPlace
             this.btnLdStackConfig.Location = new System.Drawing.Point(181, 12);
             this.btnLdStackConfig.Name = "btnLdStackConfig";
             this.btnLdStackConfig.Size = new System.Drawing.Size(139, 23);
-            this.btnLdStackConfig.TabIndex = 22;
+            this.btnLdStackConfig.TabIndex = 23;
             this.btnLdStackConfig.Text = "Load stack configuration";
             this.btnLdStackConfig.UseVisualStyleBackColor = true;
             this.btnLdStackConfig.Click += new System.EventHandler(this.btnLdStackConfig_Click);
@@ -466,6 +469,7 @@ namespace PickAndPlace
             // 
             // pnlLeft
             // 
+            this.pnlLeft.Controls.Add(this.llblVersion);
             this.pnlLeft.Controls.Add(this.btnSave);
             this.pnlLeft.Controls.Add(this.btnLoad);
             this.pnlLeft.Controls.Add(this.lblSelectPnPfile);
@@ -488,6 +492,7 @@ namespace PickAndPlace
             // pnlCenter
             // 
             this.pnlCenter.Controls.Add(this.lvExcluded);
+            this.pnlCenter.Controls.Add(this.btnMerge);
             this.pnlCenter.Controls.Add(this.btnEdit);
             this.pnlCenter.Controls.Add(this.btnExclude);
             this.pnlCenter.Controls.Add(this.btnGenerate);
@@ -497,18 +502,28 @@ namespace PickAndPlace
             this.pnlCenter.Location = new System.Drawing.Point(316, 0);
             this.pnlCenter.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(369, 666);
+            this.pnlCenter.Size = new System.Drawing.Size(438, 666);
             this.pnlCenter.TabIndex = 24;
+            // 
+            // btnMerge
+            // 
+            this.btnMerge.Location = new System.Drawing.Point(349, 318);
+            this.btnMerge.Name = "btnMerge";
+            this.btnMerge.Size = new System.Drawing.Size(75, 23);
+            this.btnMerge.TabIndex = 19;
+            this.btnMerge.Text = "Merge";
+            this.btnMerge.UseVisualStyleBackColor = true;
+            this.btnMerge.Click += new System.EventHandler(this.btnMerge_Click);
             // 
             // pnlRight
             // 
             this.pnlRight.Controls.Add(this.tcPhaseDisplayer);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRight.Location = new System.Drawing.Point(685, 0);
+            this.pnlRight.Location = new System.Drawing.Point(754, 0);
             this.pnlRight.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlRight.Size = new System.Drawing.Size(643, 594);
+            this.pnlRight.Size = new System.Drawing.Size(574, 594);
             this.pnlRight.TabIndex = 25;
             // 
             // pnlExportButtons
@@ -518,10 +533,22 @@ namespace PickAndPlace
             this.pnlExportButtons.Controls.Add(this.btnExportAll);
             this.pnlExportButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlExportButtons.Enabled = false;
-            this.pnlExportButtons.Location = new System.Drawing.Point(685, 594);
+            this.pnlExportButtons.Location = new System.Drawing.Point(754, 594);
             this.pnlExportButtons.Name = "pnlExportButtons";
-            this.pnlExportButtons.Size = new System.Drawing.Size(643, 72);
+            this.pnlExportButtons.Size = new System.Drawing.Size(574, 72);
             this.pnlExportButtons.TabIndex = 23;
+            // 
+            // llblVersion
+            // 
+            this.llblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.llblVersion.AutoSize = true;
+            this.llblVersion.Location = new System.Drawing.Point(3, 644);
+            this.llblVersion.Name = "llblVersion";
+            this.llblVersion.Size = new System.Drawing.Size(200, 13);
+            this.llblVersion.TabIndex = 26;
+            this.llblVersion.TabStop = true;
+            this.llblVersion.Text = "Software Version: 1.0  check for updates";
+            this.llblVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblVersion_LinkClicked);
             // 
             // MainForm
             // 
@@ -586,6 +613,8 @@ namespace PickAndPlace
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.Panel pnlExportButtons;
+        private System.Windows.Forms.Button btnMerge;
+        private System.Windows.Forms.LinkLabel llblVersion;
     }
 }
 

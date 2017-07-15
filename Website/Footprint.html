@@ -11,130 +11,170 @@
     Managing footprints
 </h1>
 <div>
-    <h2>
-        Including and excluding reels
-    </h2>
-    <img src="./images/Main_2.png">
-    <p>
-        After loading the loading the files, not all manufacturer part numbers are known. Reels that have a unknown
-        manufacturer part number are excluded.<br>
-    </p>
-    <ul>
-        <li>
-            To include the a reel select it in the lower list and click on the include button.
-        </li>
-        <li>
-            To exclude a reel select it in the upper list and click the exclude button.
-        </li>
-    </ul>
-    <img src="./images/ListView.png">
-    <h2 id="EditingFootprints">
-        Editing footprints
-    </h2>
-    <p>
-        After including the component a red cross appears. This means the reel can't be placed. To edit the settings of
-        the footprint double click on the reel or select the reel in the upper list and click on the Edit button.
-        The following form should appear.
-    </p>
-    <img src="./images/FootprintForm.png">
-    <p>
-        A short explanation of the settings will be given.
-    </p>
-    <ul>
-        <li>
-            <b>Part Number:</b> Manufacturer part number of the component/reel (or the name you want to give to the
-            footprint). You can enter a different part number to load it from the database (if you know a part number
-            with similar settings) or change the part number of the selected reel.
-        </li>
-        <li>
-            <b>Length:</b> Length of the footprint.
-        </li>
-        <li>
-            <b>Width:</b> Width of the footprint.
-        </li>
-        <li>
-            <b>Height:</b> Height of the footprint.
-        </li>
-        <li>
-            <strong>Rotation: see below!</strong>
-        </li>
-        <li>
-            <b>Stack type:</b> Stack type of the reel (reel 8mm, reel 12mm, reel 16mm or the tray).
-        </li>
-        <li>
-            <b>Nozzle:</b> Nozzle that the machine needs to use to pick up the component.
-            See <a href="tm220a_manual.pdf#page=21">the manual</a> for more info.
-        </li>
-        <li>
-            <b>Offset stack:</b> Stack offset of the component. for more in look at
-            <a href="http://dangerousprototypes.com/docs/TM220A_Pick_and_Place_resources#Placement_file_format"> this helpful page on
-                dangerousprototypes</a>.<br>
-            When you use the <strong>tray</strong>, place the component in the <strong>upper left corner</strong>. A
-            prediction for the middle of the component is made based on the width and the length of the footprint. You
-            can use the offset settings to correct small mistakes. Equation for determination of the middle is found
-            experimental.
-        </li>
-        <li>
-            <b>Feed rate:</b> Feed rate of the reel. This is the distance between two components on the reel.
-        </li>
-    </ul>
-    <p>
-        When you are done you just have to click on the save button and the footprint is saved in the database (same
-        counts for when you change parameters of an existing footprint). The changes you made apply to all reels with
-        the same manufacturer part number (except for changing the part number itself, that's only applied to the
-        specific reel). Be careful with the rotation!
-    </p>
-    <h3>
-        Rotation
-    </h3>
-    <p>
-        When you draw a component in your CAD program you probably didn't think about it's position in a reel. The
-        rotation parameter of a footprint is the angle (measured CCW) between the position of the component in the reel
-        and the footprint you made in your CAD program. Sounds difficult? Don't worry here is an explanation with
-        images.<br>
-        A diode sits in a reel with it's cathode at the top. Like in the first image. When your footprint is not drawn
-        with the cathode facing upwards, or your CAD program doesn't use the Y axis as 0°, then there is a rotation to
-        compensate.
-
-    </p>
-    <div class="diodeTable">
-        <table>
-            <tr>
-                <!--Images-->
-                <td><!-- 0°-->
-                    <img src="./images/DIODE_UP.png">
-                </td>
-                <td><!-- +90°-->
-                    <img src="./images/DIODE_LEFT.png">
-                </td>
-                <td><!-- -90°-->
-                    <img src="./images/DIODE_RIGHT.png">
-                </td>
-                <td><!-- +180°/-180°-->
-                    <img src="./images/DIODE_DOWN.png">
-                </td>
-            </tr>
-            <tr>
-                <!--Text-->
-                <td>
-                    <b>0°</b>
-                </td>
-                <td>
-                    <b>+90°</b>
-                </td>
-                <td>
-                    <b>-90°</b>
-                </td>
-                <td>
-                    <b>+ 180° or -180°</b>
-                </td>
-            </tr>
-        </table>
+    <div id="IncAndExcReels">
+        <h2>
+            Including and excluding reels
+        </h2>
+        <img src="./images/Main_2.png">
+        <p>
+            After loading the loading the files, not all manufacturer part numbers are known. Reels that have a unknown
+            manufacturer part number are excluded.<br>
+        </p>
+        <ul>
+            <li>
+                To include the a reel select it in the lower list and click on the include button.
+            </li>
+            <li>
+                To exclude a reel select it in the upper list and click the exclude button.
+            </li>
+        </ul>
+        <img src="./images/ListView.png">
     </div>
-    <p>
-        <strong>It is recommended that you check this parameter every time, maybe you used last time an other footprint
-            in your CAD program with an other rotation</strong>
-    </p>
+
+    <div id="EditingFootprints">
+        <h2>
+            Editing footprints
+        </h2>
+        <p>
+            After including the component a red cross appears. This means the reel can't be placed. To edit the settings
+            of the footprint double click on the reel or select the reel in the upper list and click on the Edit button.
+            The following form should appear.
+        </p>
+        <img src="./images/FootprintForm.png">
+        <p>
+            A short explanation of the settings will be given.
+        </p>
+        <ul>
+            <li>
+                <b>Part Number:</b> Manufacturer part number of the component/reel (or the name you want to give to the
+                footprint). You can enter a different part number to load it from the database (if you know a part
+                number with similar settings) or change the part number of the selected reel.
+            </li>
+            <li>
+                <b>Length:</b> Length of the footprint.
+            </li>
+            <li>
+                <b>Width:</b> Width of the footprint.
+            </li>
+            <li>
+                <b>Height:</b> Height of the footprint.
+            </li>
+            <li>
+                <strong>Rotation: see below!</strong>
+            </li>
+            <li>
+                <b>Stack type:</b> Stack type of the reel (reel 8mm, reel 12mm, reel 16mm or the tray).
+            </li>
+            <li>
+                <b>Nozzle:</b> Nozzle that the machine needs to use to pick up the component.
+                See <a href="tm220a_manual.pdf#page=21">the manual</a> for more info.
+            </li>
+            <li>
+                <b>Offset stack:</b> Stack offset of the component. For more info look at
+                <a href="http://dangerousprototypes.com/docs/TM220A_Pick_and_Place_resources#Placement_file_format">
+                    this helpful page on dangerousprototypes</a>.<br>
+                When you use the <strong>tray</strong>, place the component in the <strong>upper left corner</strong>. A
+                prediction for the middle of the component is made based on the width and the length of the footprint.
+                You can use the offset settings to correct small mistakes. Equation for determination of the middle is
+                found experimental.
+            </li>
+            <li>
+                <b>Feed rate:</b> Feed rate of the reel. This is the distance between two components on the reel.
+            </li>
+        </ul>
+        <p>
+            When you are done you just have to click on the save button and the footprint is saved in the database (same
+            counts for when you change parameters of an existing footprint). The changes you made apply to all reels
+            with the same manufacturer part number (except for changing the part number itself, that's only applied to
+            the specific reel). Be careful with the rotation!
+        </p>
+        <h3>
+            Rotation
+        </h3>
+        <p>
+            When you draw a component in your CAD program you probably didn't think about it's position in a reel. The
+            rotation parameter of a footprint is the angle (measured CCW) between the position of the component in the
+            reel and the footprint you made in your CAD program. Sounds difficult? Don't worry here is an explanation
+            with images.<br>
+            A diode sits in a reel with it's cathode at the top. Like in the first image. When your footprint is not
+            drawn with the cathode facing upwards, or your CAD program doesn't use the Y axis as 0°, then there is a
+            rotation to compensate.
+        </p>
+
+        <div class="diodeTable">
+            <table>
+                <tr>
+                    <!--Images-->
+                    <td><!-- 0°-->
+                        <img src="./images/DIODE_UP.png">
+                    </td>
+                    <td><!-- +90°-->
+                        <img src="./images/DIODE_LEFT.png">
+                    </td>
+                    <td><!-- -90°-->
+                        <img src="./images/DIODE_RIGHT.png">
+                    </td>
+                    <td><!-- +180°/-180°-->
+                        <img src="./images/DIODE_DOWN.png">
+                    </td>
+                </tr>
+                <tr>
+                    <!--Text-->
+                    <td>
+                        <b>0°</b>
+                    </td>
+                    <td>
+                        <b>+90°</b>
+                    </td>
+                    <td>
+                        <b>-90°</b>
+                    </td>
+                    <td>
+                        <b>+ 180° or -180°</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="message info">
+            <p>
+                <strong>TIP </strong>It is recommended that you check this parameter every time, maybe you used last
+                time
+                another footprint in your CAD program with another rotation.
+            </p>
+        </div>
+    </div>
+
+    <div id="mergeButton">
+        <h2>
+            Merging reels
+        </h2>
+        <p>
+            When you have multiple components on one reel that the software placed on two reels (having a different
+            comment can cause this), then you can merge them by following these steps:
+        </p>
+        <ol>
+            <li>
+                Select the reels you want to merge
+            </li>
+            <li>
+                Click on the merge button
+            </li>
+            <li>
+                Select the reel with the settings you want to keep (the comment of the other is changed for example).
+            </li>
+            <li>
+                Click on the OK button
+            </li>
+            <li>
+                Confirm you want to merge the reels
+            </li>
+        </ol>
+        <div class="message warning">
+            <p>
+                <strong>WARNING:</strong> Merging reels is irreversible.
+            </p>
+        </div>
+    </div>
 </div>
 
 <div class="pageBottom">

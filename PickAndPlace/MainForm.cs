@@ -26,6 +26,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PickAndPlaceLib;
 
+using System.Diagnostics;
+using System.Reflection;
+
 namespace PickAndPlace
 {
     /// <summary>
@@ -113,6 +116,19 @@ namespace PickAndPlace
             imageList.Images.Add(ReelLayer.Top.ToString(), topImage);
             imageList.Images.Add(ReelLayer.Bottom.ToString(), bottomImage);
             tcPhaseDisplayer.ImageList = imageList;
+
+            //
+            //Version number 
+            //
+            //Source:
+            //https://stackoverflow.com/questions/6493715/how-to-get-current-the-product-version-in-c
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string versionText = String.Format("Software version: {0}  ", AssemblyName.GetAssemblyName(assembly.Location).Version);
+            llblVersion.LinkArea = new LinkArea(versionText.Length, 30);
+            llblVersion.Links[0].LinkData = "http://pickandplacejurgen.weebly.com/#wsite-content";
+            llblVersion.Text = versionText + "check for updates";
+
+
         }
         /*-------------------------------------------------------------*/
         private void btnBrowsePnP_Click(object sender, EventArgs e)
@@ -189,7 +205,7 @@ namespace PickAndPlace
                             reel.Footprint = reelFootprint;
                         }
                     }
-                    if (pnpMachine.ReelCanBeplaced(similarReels[0])) reelsToPlace.AddRange(similarReels); //reel can be placed -> included list
+                    if (pnpMachine.ReelCanBePlaced(similarReels[0])) reelsToPlace.AddRange(similarReels); //reel can be placed -> included list
                     else excludedReels.AddRange(similarReels); //reel can't be placed -> excludedList
                 }
             }
@@ -227,7 +243,7 @@ namespace PickAndPlace
             {
                 string[] reelData = curReel.GenerateListViewText();
                 ListViewItem newLvItem = new ListViewItem(reelData);
-                newLvItem.ImageIndex = Convert.ToInt32(pnpMachine.ReelCanBeplaced(curReel));
+                newLvItem.ImageIndex = Convert.ToInt32(pnpMachine.ReelCanBePlaced(curReel));
                 lvUpdated.Items.Add(newLvItem);
             }
             lvUpdated.EndUpdate();
@@ -238,7 +254,7 @@ namespace PickAndPlace
         /// </summary>
         private void EditReel(object sender, EventArgs e)
         {
-            if (lvIncluded.SelectedItems.Count != 1)
+            if (lvIncluded.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Please select a reel", "no reel selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -261,7 +277,7 @@ namespace PickAndPlace
             {
                 StackType oldStackType = selectedReel.Footprint.StackType;
                 Footprint footprint = dialog.GetFootprint();
-                bool couldBePlaced = pnpMachine.ReelCanBeplaced(selectedReel);
+                bool couldBePlaced = pnpMachine.ReelCanBePlaced(selectedReel);
                 //Changing MPN = creating/changing footprint, changing reels with the original MPN makes it impossible to break the "connection"
                 //between reels with the same MPN
                 //however, all reels with the same new MPN need to be updated
@@ -285,7 +301,7 @@ namespace PickAndPlace
                 {
                     AssignReels(false);
                 }
-                UpdateListView();
+                GenerateListViewItems(lvIncluded, reelsToPlace);
             }
         }
         /*-------------------------------------------------------------*/
@@ -325,7 +341,39 @@ namespace PickAndPlace
             //move the listview item:
             lvOrigin.Items.Remove(selectedLvItem);
             lvDestination.Items.Add(selectedLvItem);
-            selectedLvItem.ImageIndex = Convert.ToInt32(pnpMachine.ReelCanBeplaced(reelToMove));
+            selectedLvItem.ImageIndex = Convert.ToInt32(pnpMachine.ReelCanBePlaced(reelToMove));
+        }
+        /*-------------------------------------------------------------*/
+        private void btnMerge_Click(object sender, EventArgs e)
+        {
+            //Find all selected reels
+            List<Reel> selectedReels = new List<Reel>();
+            foreach (ListViewItem selectedItem in lvIncluded.SelectedItems)
+            {
+                Reel selectedReel = reelsToPlace.Find(curReel => curReel.GetDisplayString() == selectedItem.Text);
+                selectedReels.Add(selectedReel);
+            }
+            //Check if multiple reesl are selected
+            if (selectedReels.Count <= 1)
+            {
+                MessageBox.Show("Please select more the none reel to merge", "warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //Ask wich settings to keep
+            MergeForm mergeForm = new MergeForm(selectedReels);
+            if (mergeForm.ShowDialog() == DialogResult.OK)
+            {
+                Reel mergedReel = new Reel(selectedReels, mergeForm.SelectedReel); //new merged reel
+                //remove the old reels
+                foreach (Reel reelToRemove in selectedReels)
+                {
+                    reelsToPlace.Remove(reelToRemove);
+                }
+                reelsToPlace.Add(mergedReel);
+                GenerateListViewItems(lvIncluded, reelsToPlace); //only the included list must be updated
+                if (stacklisters.Count != 0) AssignReels(false);
+            }
+
         }
         /*-------------------------------------------------------------*/
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -341,7 +389,7 @@ namespace PickAndPlace
         {
             //1) Filter the reels
             List<Reel> acceptedReels = new List<Reel>();
-            acceptedReels = reelsToPlace.FindAll(curReel => pnpMachine.ReelCanBeplaced(curReel));
+            acceptedReels = reelsToPlace.FindAll(curReel => pnpMachine.ReelCanBePlaced(curReel));
             if (showWarnings)
             {
                 //Show warnings to the user
@@ -656,7 +704,7 @@ namespace PickAndPlace
                         reel_.Speed = pnpMachine.DefaultSpeed;
                     }
                     ChangeMachineType();
-                    UpdateListView();
+                    //UpdateListView(); (this is included in ChangeMachineType)
                 }
             }
         }
@@ -721,7 +769,7 @@ namespace PickAndPlace
                         //pnpMachine = project.Machine;
                         ChangeMachineType(project.Machine);
                         stacklisters = project.StackListers;
-                        //UpdateListView();
+                        //UpdateListView(); (included in change machinetype)
                         if (stacklisters.Count != 0)
                         {
                             for (int i = 0; i < stacklisters.Count; i++)
@@ -746,6 +794,11 @@ namespace PickAndPlace
             {
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        /*-------------------------------------------------------------*/
+        private void llblVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(llblVersion.Links[0].LinkData as string);
         }
         /*-------------------------------------------------------------*/
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

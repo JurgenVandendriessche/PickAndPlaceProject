@@ -149,7 +149,7 @@ namespace PickAndPlace
             return index;
         }
 
-        public bool ReelCanBeplaced(Reel componentReel)
+        public bool ReelCanBePlaced(Reel componentReel)
         {
             if ((componentReel.Footprint != null) &&
                 (componentReel.Footprint.Height > 0) &&

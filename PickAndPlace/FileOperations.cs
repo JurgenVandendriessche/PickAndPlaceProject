@@ -114,8 +114,13 @@ namespace PickAndPlace
             using (StreamReader reader = new StreamReader(pnpFilePath, Encoding.Default))
             {
                 //I had the best result with Encoding.Default and Encoding.UTF7 (µ character)
-                string line = reader.ReadLine();
-                string[] colNames = SplitLinePNPfile(line);
+                string line;
+                string[] colNames;
+                do
+                {
+                    line = reader.ReadLine();
+                    colNames = SplitLinePNPfile(line);
+                } while (colNames.Length < pnpHeaders.Length);
 
                 //find location of corresponding columns
                 int colDesignator = IndexOfHeader(colNames, pnpHeaders[0]);
@@ -137,13 +142,15 @@ namespace PickAndPlace
                         Layer layer = Layer.Top;
                         X = ConvertPnpValue(parameters[colX]);
                         Y = ConvertPnpValue(parameters[colY]);
-                        rotation = (int)Convert.ToDouble(parameters[colRotation]);//.Replace('.', ','));
+                        rotation = (int)Convert.ToDouble(parameters[colRotation]);
                         switch (parameters[colLayer])
                         {
                             case "B":
+                            case "BottomLayer":
                                 layer = Layer.Bottom;
                                 break;
                             case "T":
+                            case "TopLayer":
                                 layer = Layer.Top;
                                 break;
                             default:
@@ -197,6 +204,7 @@ namespace PickAndPlace
         private static string SaveStringComponents(List<Reel> reelList, bool included)
         {
             StringBuilder sbResult = new StringBuilder();
+            //TO DO: make foreach
             for (int reelIndex = 0; reelIndex < reelList.Count; reelIndex++)
             {
                 List<PnpComponent> componentList = reelList[reelIndex].Components;
@@ -305,6 +313,7 @@ namespace PickAndPlace
         /// Load a pick and place project from the project.path
         /// </summary>
         /// <param name="project">Project to load data to</param>
+        /// <exception cref="PickAndPlace.FileOperationsException">Thrown when data is missing or when a line could not be decoded</exception>
         public static void LoadProject(PnpProject project)
         {
             List<PnpComponent> includedComponents = new List<PnpComponent>();
@@ -465,7 +474,7 @@ namespace PickAndPlace
 
         /// <summary>
         /// Reads a config file and return two arrays:
-        /// <para>one with the parameters for reading a pick and place file and one for reading a bom file</para>
+        /// <para>One with the parameters for reading a pick and place file and one for reading a bom file</para>
         /// </summary>
         /// <returns>2 Arrays: one for reading a pick and place file, and one for reading a bom file</returns>
         public static string[][] ReadConfigFile()

@@ -31,6 +31,15 @@
         There are 3 distinct situations: a machine from the TM family with two nozzles, a machine with two nozzles or a
         machine with 1 nozzle, or more than two nozzles.
     </p>
+    <h3>
+        The ReelCanBePlaced function
+    </h3>
+    <p>
+        It is recommanded that this function returns false for the default footprint (footprint that is not yet in the
+        database).<br>
+        Otherwise the user wil see an OK image in the ListView and forget to modify the footprint.<br>
+        A simple way to do this is by saying that the height must be greater then 0.
+    </p>
     <h2>Machine from the TM family with two nozzles:</h2>
     <p>
         This is very simple:

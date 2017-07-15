@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Input file rules</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="mainStyle">
+<h1>
+    Input file rules
+</h1>
+<div>
+    <div id="Info">
+        <h2>
+            Info
+        </h2>
+        <p>
+            On this page more info is given on how the pick and place file and bom file should look.<br>
+            Starting from Altium Designer 17, the pick and place files have more options. Together with the rules the
+            settings for Altium Designer 17 are described.
+        </p>
+    </div>
+
+    <div id="PickAndPlaceFile">
+        <h2>
+            Pick and place file
+        </h2>
+        <h3>
+            Minimum content:
+        </h3>
+        <p>
+            The pick and place file should at least contain 6 columns. The order doesn't mater.<br>
+            The 6 columns are: Designator, x and y coordinate, layer, rotation and comment.<br>
+            <i>Altium Designer: Check that these columns are included and make sure you use the right coordinates.</i>
+        </p>
+        <h3>
+            Header:
+        </h3>
+        <p>
+            The header of the pick and place file is used to identify the columns. The header values of the pick and
+            place file can be changed under the settings in the program.<br>
+        </p>
+        <ul>
+            <li>
+                <strong>Values:</strong> Must contain the names from the settings.<br>
+                <i>Altium Designer: Check the names of the columns in the output file.</i>
+            </li>
+            <li>
+                <strong>Surrounded</strong> by " ".
+            </li>
+            <li>
+                <strong>Separated</strong> by a ','.
+            </li>
+            <li>
+                <strong>Location</strong>: Before the values.
+            </li>
+        </ul>
+        <h3>
+            Component values:
+        </h3>
+        <ul>
+            <li>
+                <strong>Surrounded</strong> by " ".
+            </li>
+            <li>
+                <strong>Separator:</strong> separated by a ','.
+            </li>
+            <li>
+                <strong>units:</strong> values should end with their unit (mil or mm, recommended: mm).<br>
+                <i>Altium Designer: check the "Show Units"</i>
+            </li>
+            <li>
+                <strong>Decimals:</strong> decimal separator is a '.' not a ','.
+            </li>
+            <li>
+                <strong>Layer:</strong> layers are described by a <b>T</b> or <b>TopLayer</b> and a <b>B</b> or <b>BottomLayer</b>
+            </li>
+        </ul>
+    </div>
+
+    <div id="BomFile">
+        <h2>
+            BOM file
+        </h2>
+        <h3>
+            Minimum content:
+        </h3>
+        <p>
+            The BOM file should at least contain 2 columns: Designator and Manufacturer Part Number*<br>
+            The order of the columns doesn't mater.<br>
+        </p>
+
+        <h3>
+            Header:
+        </h3>
+        <p>
+            The header of the BOM file is used to identify the columns. The header values of the BOM file can be changed
+            under the settings in the program.<br>
+        </p>
+        <ul>
+            <li>
+                <strong>Values:</strong> Must contain the names from the settings.<br>
+            </li>
+            <li>
+                <strong>NOT surrounded</strong> by " ".
+            </li>
+            <li>
+                <strong>Separated</strong> by ','.
+            </li>
+            <li>
+                <strong>Location:</strong> first line of the file.
+            </li>
+        </ul>
+
+        <h3>
+            Component values:
+        </h3>
+        <ul>
+            <li>
+                <strong>Surrounded</strong> by " ".
+            </li>
+            <li>
+                <strong>Separator:</strong> separated by a ','.
+            </li>
+            <li>
+                <strong>Column "designators":</strong> All designators that have the same footprint and comment.
+                Separated
+                by a ','.
+            </li>
+            <li>
+                <strong>Column "Manufacturer part number":</strong> ONLY one manufacturer part number.
+            </li>
+        </ul>
+
+        <p>
+            * Manufacturer part number is a suggestion, you can take something completely different. However, keep in
+            mind that the footprints and stack setup are saved by this parameter.
+        </p>
+
+    </div>
+</div>
+
+<div class="pageBottom">
+    <p>
+        <a href="javascript:history.back()">Back</a> <a href="Home.html">Home</a>
+    </p>
+</div>
+
+</body>
+</html>

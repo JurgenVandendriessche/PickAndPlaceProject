@@ -98,11 +98,11 @@ namespace PickAndPlace
         public void SetFileSettings(string[] pnpFileParameters, string[] bomFileParameters)
         {
             dgPnpFilePara.Rows.Add(new string[] { "Designator", pnpFileParameters[0] });
-            dgPnpFilePara.Rows.Add(new string[] { "x coordinate", pnpFileParameters[1] });
-            dgPnpFilePara.Rows.Add(new string[] { "y coordinate", pnpFileParameters[2] });
-            dgPnpFilePara.Rows.Add(new string[] { "layer", pnpFileParameters[3] });
+            dgPnpFilePara.Rows.Add(new string[] { "X coordinate", pnpFileParameters[1] });
+            dgPnpFilePara.Rows.Add(new string[] { "Y coordinate", pnpFileParameters[2] });
+            dgPnpFilePara.Rows.Add(new string[] { "Layer", pnpFileParameters[3] });
             dgPnpFilePara.Rows.Add(new string[] { "Rotation", pnpFileParameters[4] });
-            dgPnpFilePara.Rows.Add(new string[] { "comment", pnpFileParameters[5] });
+            dgPnpFilePara.Rows.Add(new string[] { "Comment", pnpFileParameters[5] });
 
 
             dgPnpFilePara.FitHeight();
@@ -111,7 +111,7 @@ namespace PickAndPlace
 
 
             dgBomFilePara.Rows.Add(new string[] { "Designator", bomFileParameters[0] });
-            dgBomFilePara.Rows.Add(new string[] { "manufacturer part number", bomFileParameters[1] });
+            dgBomFilePara.Rows.Add(new string[] { "Manufacturer part number", bomFileParameters[1] });
             //dgBomFilePara.Height = dgBomFilePara.Rows.GetRowsHeight(DataGridViewElementStates.None) + dgBomFilePara.ColumnHeadersHeight;
             //Doesn't work with mono
             dgBomFilePara.FitHeight();

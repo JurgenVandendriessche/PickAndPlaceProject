@@ -93,7 +93,7 @@ namespace PickAndPlace
         /// </summary>
         /// <param name="componentReel">Reel to check</param>
         /// <returns>True if the reel can be placed</returns>
-        bool ReelCanBeplaced(Reel componentReel);
+        bool ReelCanBePlaced(Reel componentReel);
 
         /// <summary>
         /// Compare 2 machines, returns true if they are the same type and have the same nozzles equipped, else false
