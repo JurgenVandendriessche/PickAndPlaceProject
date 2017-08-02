@@ -158,7 +158,7 @@ namespace PickAndPlace
         /// <param name="value">Reel to be set</param>
         public void SetReelWithUpdate(Reel value)
         {
-            if (value.ManufacturerPartNumber == this.manufacturerPartNumber_)
+            if (value.ManufacturerPartNumber == this.manufacturerPartNumber_) //TO DO: check -> optional? caller checks also
                 SetReel(value, false);
             RefreshList();
             if (ReelChanged != null) ReelChanged(this, null);
@@ -168,7 +168,7 @@ namespace PickAndPlace
         /// Changes the reel of the current control (USE ONLY DURING SWITCHING)
         /// </summary>
         /// <param name="newReel">New reel of the control</param>
-        public void ChangeReel(Reel newReel)    
+        public void ChangeReel(Reel newReel)
         {
             this.reel_ = newReel;
             //this.manufacturerPartNumber_ = newReel.footprint.manufacturerPartNumber; //Optional: mpn is only used for loading configuration
@@ -178,7 +178,7 @@ namespace PickAndPlace
         /// <summary>
         /// Sets the list reels in the combobox
         /// </summary>
-        /// <param name="totalList">List of reels for the combobox</param>
+        /// <param name="totalList">List of reels for the ComboBox</param>
         public void SetList(List<Reel> totalList)
         {
             ptrcbxList = totalList;

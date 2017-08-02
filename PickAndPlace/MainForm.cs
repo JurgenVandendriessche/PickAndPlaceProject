@@ -475,10 +475,11 @@ namespace PickAndPlace
                         StackList newStackControl = GenerateNewPhase();
                         if (!newStackControl.AddReel(goodReel))
                         {
-                            //this control can't be added
+                            //this reel can't be added
                             //newStackControl.updateAllListsEvent -= updateAllListsEvent;
                             //stacklisters.Remove(newStackControl);
                             //newStackControl.Dispose();
+                            reelIndex--; //go to previous : otherwise a reel could be skipped
                             reelsToFill.Remove(goodReel);
                         }
                         succes = true;
@@ -528,7 +529,7 @@ namespace PickAndPlace
         {
             foreach (StackList stackList_ in stacklisters)
             {
-                if (stackList_.UpdateAllLists(sender, sendersOldReel)) return; //If thhe change has happend return, no need to check the ohters
+                if (stackList_.UpdateAllLists(sender, sendersOldReel)) return; //If the change has happend return, no need to check the ohters
             }
         }
         /*-------------------------------------------------------------*/
@@ -723,14 +724,14 @@ namespace PickAndPlace
                     project.Machine = pnpMachine;
                     project.ProjectName = projectName;
                     project.ProjectFolder = folder;
-                    project.BoardSettings.HorizontalOriginOffset = (float)bscOrigin.ValueX;
-                    project.BoardSettings.VerticalOriginOffset = (float)bscOrigin.ValueY;
-                    project.BoardSettings.BoardsX = (int)bscNumberOfBoards.ValueX;
-                    project.BoardSettings.BoardsY = (int)bscNumberOfBoards.ValueX;
-                    project.BoardSettings.DistanceX = (float)bscDistBetwBoards.ValueX;
-                    project.BoardSettings.DistanceY = (float)bscDistBetwBoards.ValueY;
-                    project.BoardSettings.BoardWidth = (float)bscDimensions.ValueX;
-                    project.BoardSettings.BoardLength = (float)bscDimensions.ValueY;
+                    project.HorizontalOriginOffset = (float)bscOrigin.ValueX;
+                    project.VerticalOriginOffset = (float)bscOrigin.ValueY;
+                    project.BoardsX = (int)bscNumberOfBoards.ValueX;
+                    project.BoardsY = (int)bscNumberOfBoards.ValueX;
+                    project.DistanceX = (float)bscDistBetwBoards.ValueX;
+                    project.DistanceY = (float)bscDistBetwBoards.ValueY;
+                    project.BoardWidth = (float)bscDimensions.ValueX;
+                    project.BoardLength = (float)bscDimensions.ValueY;
                     project.IncludedReels = reelsToPlace;
                     project.ExcludedReels = excludedReels;
                     project.StackListers = stacklisters;
@@ -755,14 +756,14 @@ namespace PickAndPlace
                         ClearPhases();
                         projectName = project.ProjectName;
                         folder = project.ProjectFolder;
-                        bscOrigin.ValueX = (decimal)project.BoardSettings.HorizontalOriginOffset;
-                        bscOrigin.ValueY = (decimal)project.BoardSettings.VerticalOriginOffset;
-                        bscNumberOfBoards.ValueX = (decimal)project.BoardSettings.BoardsX;
-                        bscNumberOfBoards.ValueY = (decimal)project.BoardSettings.BoardsY;
-                        bscDistBetwBoards.ValueX = (decimal)project.BoardSettings.DistanceX;
-                        bscDistBetwBoards.ValueY = (decimal)project.BoardSettings.DistanceY;
-                        bscDimensions.ValueX = (decimal)project.BoardSettings.BoardWidth;
-                        bscDimensions.ValueY = (decimal)project.BoardSettings.BoardLength;
+                        bscOrigin.ValueX = (decimal)project.HorizontalOriginOffset;
+                        bscOrigin.ValueY = (decimal)project.VerticalOriginOffset;
+                        bscNumberOfBoards.ValueX = (decimal)project.BoardsX;
+                        bscNumberOfBoards.ValueY = (decimal)project.BoardsY;
+                        bscDistBetwBoards.ValueX = (decimal)project.DistanceX;
+                        bscDistBetwBoards.ValueY = (decimal)project.DistanceY;
+                        bscDimensions.ValueX = (decimal)project.BoardWidth;
+                        bscDimensions.ValueY = (decimal)project.BoardLength;
                         reelsToPlace = project.IncludedReels;
                         excludedReels = project.ExcludedReels;
                         //stacklisters = project.StackListers;

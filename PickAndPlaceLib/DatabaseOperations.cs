@@ -57,20 +57,20 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Gets a specific footprint out of the database
         /// </summary>
-        /// <param name="partNumber">Manufacturer part number of the searched part</param>
+        /// <param name="manufacturerPartNumber">Manufacturer part number of the searched part</param>
         /// <returns>Footprint of the manufacturere part number</returns>
-        public static Footprint GetFootprint(string partNumber)
+        public static Footprint GetFootprint(string manufacturerPartNumber)
         {
-            return GetFootprint(partNumber, connectionString);
+            return GetFootprint(manufacturerPartNumber, connectionString);
         }
 
         /// <summary>
         /// Get the footprint from the database specified by the connectionstring
         /// </summary>
-        /// <param name="partNumber">Manufacturer part number to be loaded</param>
+        /// <param name="manufacturerPartNumber">Manufacturer part number to be loaded</param>
         /// <param name="connectionString_">Connectionstring for the sqlite database</param>
         /// <returns>Footprint of the manufacturere part number</returns>
-        private static Footprint GetFootprint(string partNumber, string connectionString_)
+        private static Footprint GetFootprint(string manufacturerPartNumber, string connectionString_)
         {
             Footprint result = null;
             string sqlString = @"SELECT f.manufacturerPartNumber,f.width,f.length,f.height,f.rotation,f.offsetStackX,f.offsetStackY,f.feedRate,n.name as nozzle,s.name as stackType
@@ -82,7 +82,7 @@ namespace PickAndPlaceLib
             using (SqliteCommand dbCommand = new SqliteCommand(sqlString, dbConnection))
             {
                 dbConnection.Open();
-                dbCommand.Parameters.AddWithValue("manufacturerPartNumber", partNumber);
+                dbCommand.Parameters.AddWithValue("manufacturerPartNumber", manufacturerPartNumber);
                 using (SqliteDataReader reader = dbCommand.ExecuteReader())
                 {
                     reader.Read();
@@ -225,13 +225,13 @@ namespace PickAndPlaceLib
         /// <summary>
         /// Gets a list of all the manufacturer part numbers in the database specified by the connectionstring
         /// </summary>
-        /// <param name="connectionString">Connectionstring for the sqlite database</param>
+        /// <param name="connectionString_">Connectionstring for the sqlite database</param>
         /// <returns>List of all the manufacturer part numbers in the database</returns>
-        private static List<string> GetFootprintList(string connectionString)
+        private static List<string> GetFootprintList(string connectionString_)
         {
             List<string> result = new List<string>();
             string sqlString = "SELECT f.manufacturerPartNumber as manufacturerPartNumber FROM footprints f";
-            using (SqliteConnection dbConnection = new SqliteConnection(connectionString))
+            using (SqliteConnection dbConnection = new SqliteConnection(connectionString_))
             using (SqliteCommand dbCommand = new SqliteCommand(sqlString, dbConnection))
             {
                 dbConnection.Open();

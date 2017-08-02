@@ -43,17 +43,33 @@ namespace PickAndPlaceDatabaseManager
         /*-------------------------------------------------------------*/
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            filterString_ = filterControl1.GetFilterString();
+            StringBuilder strBuilder = new StringBuilder();
+            //filterString_ = filterControl1.GetFilterString();
+            string filterTerm1 = filterControl1.GetFilterString();
             string filterTerm2 = filterControl2.GetFilterString();
             string filterTerm3 = filterControl3.GetFilterString();
+            if (filterTerm1 != null)
+            {
+                strBuilder.Append(filterTerm1);
+                if (filterTerm2 != null || filterTerm3 != null)
+                {
+                    strBuilder.Append(" AND ");
+                }
+            }
             if (filterTerm2 != null)
             {
-                filterString_ += " AND " + filterTerm2;
+                strBuilder.Append(filterTerm2);
+                if (filterTerm3 != null)
+                {
+                    strBuilder.Append(" AND ");
+                }
             }
             if (filterTerm3 != null)
             {
-                filterString_ += " AND " + filterTerm3;
+                strBuilder.Append(filterTerm3);
+                //filterString_ += " AND " + filterTerm3;
             }
+            filterString_ = strBuilder.ToString();
             this.DialogResult = DialogResult.Yes;
             this.Close();
         }
@@ -63,7 +79,7 @@ namespace PickAndPlaceDatabaseManager
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-        
+
         /// <summary>
         /// Gets the string to filter a <see cref="System.Data.DataView"/>
         /// </summary>

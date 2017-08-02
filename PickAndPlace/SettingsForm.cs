@@ -179,7 +179,6 @@ namespace PickAndPlace
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (System.IO.Directory.Exists(tbxFolder.Text)) dialog.SelectedPath = tbxFolder.Text;
-
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) tbxFolder.Text = dialog.SelectedPath;
         }
     }

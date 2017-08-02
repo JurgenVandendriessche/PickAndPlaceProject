@@ -25,13 +25,12 @@ namespace PickAndPlace
     /// <summary>
     /// Class that is used to pass parameters between functions
     /// </summary>
-    public class PnpProject
+    public class PnpProject : BoardSettings
     {
         private string path_;
         private string projectName_;
         private string projectFolder_;
         private IMachine machine_;
-        private BoardSettings boardSettings_;
         private List<Reel> includedReels_;
         private List<Reel> excludedReels_;
         private List<Reel> reelsInStackList_;
@@ -44,9 +43,9 @@ namespace PickAndPlace
         /// </summary>
         /// <param name="path">Path to file</param>
         public PnpProject(string path)
+            : base(0f, 0f, 0f, 0f)
         {
             path_ = path;
-            boardSettings_ = new BoardSettings(0f, 0f, 0f, 0f);
             includedReels_ = new List<Reel>();
             excludedReels_ = new List<Reel>();
             reelsInStackList_ = new List<Reel>();
@@ -87,15 +86,6 @@ namespace PickAndPlace
         {
             get { return this.machine_; }
             set { this.machine_ = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the settings of the board
-        /// </summary>
-        public BoardSettings BoardSettings
-        {
-            get { return this.boardSettings_; }
-            set { this.boardSettings_ = value; }
         }
 
         /// <summary>

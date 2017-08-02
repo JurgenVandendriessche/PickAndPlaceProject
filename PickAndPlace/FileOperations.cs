@@ -221,7 +221,7 @@ namespace PickAndPlace
         }
 
         /// <summary>
-        /// Load a pick and place project
+        /// Save a pick and place project
         /// </summary>
         /// <param name="project">Project to save</param>
         public static void SaveProject(PnpProject project)
@@ -248,10 +248,10 @@ namespace PickAndPlace
                 //Part 3: Offset and panelization
                 writer.WriteLine("#Offset and panelization:");
                 writer.WriteLine("originOffsetX={1},originOffsetY={2}{0}boardsX={3},boardsY={4}{0}distanceX={5},distanceY={6}{0}boardDimX={7},boardDimY={8}{0}",
-                          new object[] {Environment.NewLine,project.BoardSettings.HorizontalOriginOffset,project.BoardSettings.VerticalOriginOffset,
-                                        project.BoardSettings.BoardsX,project.BoardSettings.BoardsY,
-                                        project.BoardSettings.DistanceX,project.BoardSettings.DistanceY,
-                                        project.BoardSettings.BoardWidth,project.BoardSettings.BoardLength});
+                          new object[] {Environment.NewLine,project.HorizontalOriginOffset,project.VerticalOriginOffset,
+                                        project.BoardsX,project.BoardsY,
+                                        project.DistanceX,project.DistanceY,
+                                        project.BoardWidth,project.BoardLength});
 
                 //part 4: components
                 writer.WriteLine("#Included components/reels:");
@@ -345,20 +345,20 @@ namespace PickAndPlace
                             }
                             break;
                         case "originOffsetX":
-                            project.BoardSettings.HorizontalOriginOffset = float.Parse(splitedLine[1]);
-                            project.BoardSettings.VerticalOriginOffset = float.Parse(splitedLine[3]);
+                            project.HorizontalOriginOffset = float.Parse(splitedLine[1]);
+                            project.VerticalOriginOffset = float.Parse(splitedLine[3]);
                             break;
                         case "boardsX":
-                            project.BoardSettings.BoardsX = Convert.ToInt32(splitedLine[1]);
-                            project.BoardSettings.BoardsY = Convert.ToInt32(splitedLine[3]);
+                            project.BoardsX = Convert.ToInt32(splitedLine[1]);
+                            project.BoardsY = Convert.ToInt32(splitedLine[3]);
                             break;
                         case "distanceX":
-                            project.BoardSettings.DistanceX = float.Parse(splitedLine[1]);
-                            project.BoardSettings.DistanceY = float.Parse(splitedLine[3]);
+                            project.DistanceX = float.Parse(splitedLine[1]);
+                            project.DistanceY = float.Parse(splitedLine[3]);
                             break;
                         case "boardDimX":
-                            project.BoardSettings.BoardWidth = float.Parse(splitedLine[1]);
-                            project.BoardSettings.BoardLength = float.Parse(splitedLine[3]);
+                            project.BoardWidth = float.Parse(splitedLine[1]);
+                            project.BoardLength = float.Parse(splitedLine[3]);
                             break;
                         case "Designator":
                             //load new component
@@ -445,10 +445,10 @@ namespace PickAndPlace
                 project.IncludedReels = ComponentsToReels(includedComponents, project.Machine.DefaultSpeed);
                 project.ExcludedReels = ComponentsToReels(excludedComponents, project.Machine.DefaultSpeed);
             }
-            if ((project.BoardSettings.HorizontalOriginOffset == -1f) || (project.BoardSettings.VerticalOriginOffset == -1f) ||
-                (project.BoardSettings.BoardsX == -1) || (project.BoardSettings.BoardsY == -1) ||
-                (project.BoardSettings.DistanceX == -1f) || (project.BoardSettings.DistanceY == -1f) ||
-                (project.BoardSettings.BoardWidth == -1f) || (project.BoardSettings.BoardLength == -1f) ||
+            if ((project.HorizontalOriginOffset == -1f) || (project.VerticalOriginOffset == -1f) ||
+                (project.BoardsX == -1) || (project.BoardsY == -1) ||
+                (project.DistanceX == -1f) || (project.DistanceY == -1f) ||
+                (project.BoardWidth == -1f) || (project.BoardLength == -1f) ||
                 (project.Machine == null))
             {
                 throw new FileOperationsException("Not all data was found in the file");

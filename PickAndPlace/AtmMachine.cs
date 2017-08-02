@@ -42,7 +42,15 @@ namespace PickAndPlace
         private readonly int length_;
         private readonly int totalAmountOfReels_;
 
-        protected ATmMachine(int reels8mm_, int reels12mm_, int reels16mm_, int width, int length)
+        /// <summary>
+        /// Initialises a new ATmMachine with the given amount of reel stacks
+        /// </summary>
+        /// <param name="reels8mm">Number of 8mm reel stacks</param>
+        /// <param name="reels12mm">Number of 12mm reel stacks</param>
+        /// <param name="reels16mm">Number of 16mm reel stacks</param>
+        /// <param name="width">Maximum PCB width</param>
+        /// <param name="length">Maximum PCB length</param>
+        protected ATmMachine(int reels8mm, int reels12mm, int reels16mm, int width, int length)
         {
             defaultSpeed_ = 100;
             this.equippedNozzles_ = new Nozzle[2] { Nozzle.XS, Nozzle.S };
@@ -50,12 +58,12 @@ namespace PickAndPlace
             this.length_ = length;
 
             int index = 0;
-            totalAmountOfReels_ = tray18mm_ + reels8mm_ + reels12mm_ + reels16mm_;
+            totalAmountOfReels_ = tray18mm_ + reels8mm + reels12mm + reels16mm;
             stackConfiguration_ = new StackType[totalAmountOfReels_];
             AddStackTypes(StackType.Tray18mm, ref index, tray18mm_);
-            AddStackTypes(StackType.Reel08mm, ref index, reels8mm_);
-            AddStackTypes(StackType.Reel12mm, ref index, reels12mm_);
-            AddStackTypes(StackType.Reel16mm, ref index, reels16mm_);
+            AddStackTypes(StackType.Reel08mm, ref index, reels8mm);
+            AddStackTypes(StackType.Reel12mm, ref index, reels12mm);
+            AddStackTypes(StackType.Reel16mm, ref index, reels16mm);
         }
 
         /// <summary>

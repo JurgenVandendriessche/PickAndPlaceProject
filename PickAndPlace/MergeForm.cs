@@ -52,7 +52,7 @@ namespace PickAndPlace
             }
             if (MessageBox.Show("Warning: this change is irreversible" + Environment.NewLine + "Are you sure?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }

@@ -57,7 +57,7 @@ namespace PickAndPlaceDatabaseManager
         }
 
         /// <summary>
-        /// Display a new <see cref="PickAndPlaceDatabaseManager.FootprintForm"/>
+        /// Displays the <see cref="PickAndPlaceDatabaseManager.FootprintForm"/> and handles the changes to the data.
         /// </summary>
         /// <param name="footprintForm">FootprintForm to display</param>
         private void ShowFootprintForm(FootprintForm footprintForm)
