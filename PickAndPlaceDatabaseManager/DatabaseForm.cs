@@ -135,8 +135,8 @@ namespace PickAndPlaceDatabaseManager
             } while (!succes);
             for (int i = 0; i < dgvFootprints.Columns.Count; i++)
             {
-                clbColumsDisplay.Items.Add(dgvFootprints.Columns[i].HeaderText);
-                clbColumsDisplay.SetItemChecked(i, true);
+                clbColumnsDisplay.Items.Add(dgvFootprints.Columns[i].HeaderText);
+                clbColumnsDisplay.SetItemChecked(i, true);
             }
         }
         /*-------------------------------------------------------------*/
@@ -187,9 +187,9 @@ namespace PickAndPlaceDatabaseManager
             tableView.RowFilter = String.Empty;
         }
         /*-------------------------------------------------------------*/
-        private void clbColumsDisplay_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void clbColumnsDisplay_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            string headerText = clbColumsDisplay.Items[e.Index].ToString(); //Find wich column needs to be displayed / hide
+            string headerText = clbColumnsDisplay.Items[e.Index].ToString(); //Find wich column needs to be displayed / hide
             dgvFootprints.Columns[headerText].Visible = (e.NewValue == CheckState.Checked);// Display or hide the column
         }
         /*-------------------------------------------------------------*/

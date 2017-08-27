@@ -78,11 +78,11 @@ namespace PickAndPlace
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.llblVersion = new System.Windows.Forms.LinkLabel();
             this.pnlCenter = new System.Windows.Forms.Panel();
             this.btnMerge = new System.Windows.Forms.Button();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlExportButtons = new System.Windows.Forms.Panel();
-            this.llblVersion = new System.Windows.Forms.LinkLabel();
             this.gbOffsetAndPanelization.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlCenter.SuspendLayout();
@@ -399,7 +399,7 @@ namespace PickAndPlace
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(263, 318);
+            this.btnGenerate.Location = new System.Drawing.Point(349, 318);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 18;
@@ -489,6 +489,18 @@ namespace PickAndPlace
             this.pnlLeft.Size = new System.Drawing.Size(316, 666);
             this.pnlLeft.TabIndex = 23;
             // 
+            // llblVersion
+            // 
+            this.llblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.llblVersion.AutoSize = true;
+            this.llblVersion.Location = new System.Drawing.Point(3, 644);
+            this.llblVersion.Name = "llblVersion";
+            this.llblVersion.Size = new System.Drawing.Size(200, 13);
+            this.llblVersion.TabIndex = 26;
+            this.llblVersion.TabStop = true;
+            this.llblVersion.Text = "Software Version: 1.0  check for updates";
+            this.llblVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblVersion_LinkClicked);
+            // 
             // pnlCenter
             // 
             this.pnlCenter.Controls.Add(this.lvExcluded);
@@ -507,7 +519,7 @@ namespace PickAndPlace
             // 
             // btnMerge
             // 
-            this.btnMerge.Location = new System.Drawing.Point(349, 318);
+            this.btnMerge.Location = new System.Drawing.Point(263, 318);
             this.btnMerge.Name = "btnMerge";
             this.btnMerge.Size = new System.Drawing.Size(75, 23);
             this.btnMerge.TabIndex = 19;
@@ -537,18 +549,6 @@ namespace PickAndPlace
             this.pnlExportButtons.Name = "pnlExportButtons";
             this.pnlExportButtons.Size = new System.Drawing.Size(574, 72);
             this.pnlExportButtons.TabIndex = 23;
-            // 
-            // llblVersion
-            // 
-            this.llblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.llblVersion.AutoSize = true;
-            this.llblVersion.Location = new System.Drawing.Point(3, 644);
-            this.llblVersion.Name = "llblVersion";
-            this.llblVersion.Size = new System.Drawing.Size(200, 13);
-            this.llblVersion.TabIndex = 26;
-            this.llblVersion.TabStop = true;
-            this.llblVersion.Text = "Software Version: 1.0  check for updates";
-            this.llblVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblVersion_LinkClicked);
             // 
             // MainForm
             // 

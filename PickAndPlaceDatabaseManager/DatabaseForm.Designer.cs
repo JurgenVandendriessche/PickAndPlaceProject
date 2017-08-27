@@ -50,7 +50,7 @@ namespace PickAndPlaceDatabaseManager
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.clbColumsDisplay = new System.Windows.Forms.CheckedListBox();
+            this.clbColumnsDisplay = new System.Windows.Forms.CheckedListBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvFootprints = new System.Windows.Forms.DataGridView();
             this.pnlDgvFootprints = new System.Windows.Forms.Panel();
@@ -114,15 +114,15 @@ namespace PickAndPlaceDatabaseManager
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // clbColumsDisplay
+            // clbColumnsDisplay
             // 
-            this.clbColumsDisplay.CheckOnClick = true;
-            this.clbColumsDisplay.FormattingEnabled = true;
-            this.clbColumsDisplay.Location = new System.Drawing.Point(29, 153);
-            this.clbColumsDisplay.Name = "clbColumsDisplay";
-            this.clbColumsDisplay.Size = new System.Drawing.Size(186, 244);
-            this.clbColumsDisplay.TabIndex = 7;
-            this.clbColumsDisplay.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbColumsDisplay_ItemCheck);
+            this.clbColumnsDisplay.CheckOnClick = true;
+            this.clbColumnsDisplay.FormattingEnabled = true;
+            this.clbColumnsDisplay.Location = new System.Drawing.Point(29, 153);
+            this.clbColumnsDisplay.Name = "clbColumnsDisplay";
+            this.clbColumnsDisplay.Size = new System.Drawing.Size(186, 244);
+            this.clbColumnsDisplay.TabIndex = 7;
+            this.clbColumnsDisplay.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbColumnsDisplay_ItemCheck);
             // 
             // btnImport
             // 
@@ -167,7 +167,7 @@ namespace PickAndPlaceDatabaseManager
             // 
             // pnlControls
             // 
-            this.pnlControls.Controls.Add(this.clbColumsDisplay);
+            this.pnlControls.Controls.Add(this.clbColumnsDisplay);
             this.pnlControls.Controls.Add(this.lblShownColumns);
             this.pnlControls.Controls.Add(this.btnAdd);
             this.pnlControls.Controls.Add(this.btnImport);
@@ -236,7 +236,7 @@ namespace PickAndPlaceDatabaseManager
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.CheckedListBox clbColumsDisplay;
+        private System.Windows.Forms.CheckedListBox clbColumnsDisplay;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.DataGridView dgvFootprints;
         private System.Windows.Forms.Panel pnlDgvFootprints;
